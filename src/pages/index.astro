@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import mainCCTVImage from "~/assets/main-cctv.jpg";
+---
+
+<Layout title="Home">
+  <main class="container mx-auto md:p-2">
+    <a href="/cctv" class="btn btn-ghost hero h-full">
+      <div class="hero-content flex-col md:flex-row md:gap-12">
+        <Image
+          src={mainCCTVImage}
+          alt="CCTV Image"
+          class="w-full rounded-lg shadow-md md:max-w-sm"
+          transition:name="main-cctv-image"
+        />
+        <div class="flex w-full flex-col gap-2 text-left md:gap-4">
+          <h2 class="text-3xl font-bold md:text-5xl">CCTV</h2>
+          <p>Get object detected footage from CCTV</p>
+        </div>
+      </div>
+    </a>
+    <div class="divider"></div>
+  </main>
+</Layout>

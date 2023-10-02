@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import Layout from "~/layouts/Layout.astro";
+import mainCCTVImage from "~/assets/main-cctv.jpg";
+import { createVar, createFilter, createTag } from "~/uitls/django";
+---
+
+<Layout title="cctv">
+  <main class="container mx-auto md:p-2">
+    <div class="hero">
+      <div class="hero-content">
+        <Image
+          src={mainCCTVImage}
+          alt="CCTV Image"
+          class="rounded-lg shadow-md md:max-w-[12rem]"
+          transition:name="main-cctv-image"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>

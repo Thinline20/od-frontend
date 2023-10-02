@@ -1,0 +1,58 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { Icon } from "astro-icon";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <ViewTransitions />
+    <script>
+      document.addEventListener("astro:page-load", () => {
+        const themeSelect = document.getElementById("theme");
+
+        if (localStorage.getItem("theme") === null) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+
+        themeSelect.addEventListener("change", (e) => {
+          const theme = e.target.value;
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        });
+      });
+
+      document.addEventListener("astro:after-swap", () => {
+        const theme = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", theme);
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="container navbar mx-auto">
+      <nav class="flex-1">
+        <a href="/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
+          ><span>AI</span><span class="text-error">SW</span></a
+        >
+      </nav>
+      <div class="flex-none">
+        <select name="theme" id="theme" class="select" transition:persist>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </header>
+    <slot />
+  </body>
+</html>
