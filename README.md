@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Object Detection Frontend
 
 ## Project Setup
 
