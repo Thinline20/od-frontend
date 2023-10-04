@@ -3,15 +3,16 @@ import { ViewTransitions } from "astro:transitions";
 import { Icon } from "astro-icon";
 interface Props {
   title: string;
+  useTransition?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, useTransition = true } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" data-theme="light">
   <head>
-    <ViewTransitions />
+    {useTransition && <ViewTransitions />}
     <script>
       document.addEventListener("astro:page-load", () => {
         const themeSelect = document.getElementById("theme");
