@@ -7,15 +7,16 @@ import { createVar, createFilter, createTag } from "~/uitls/django";
 
 <Layout title="cctv">
   <main class="container mx-auto md:p-2">
-    <div class="hero">
-      <div class="hero-content">
-        <Image
-          src={mainCCTVImage}
-          alt="CCTV Image"
-          class="rounded-lg shadow-md md:max-w-[12rem]"
-          transition:name="main-cctv-image"
-        />
-      </div>
+    <div class="flex justify-center">
+      <Image
+        src={mainCCTVImage}
+        alt="CCTV Image"
+        class="rounded-lg shadow-md md:max-w-[12rem]"
+        transition:name="main-cctv-image"
+      />
+    </div>
+    <div>
+      <a href="/room" class="link link-primary hover:link-hover">Room</a>
     </div>
   </main>
 </Layout>
