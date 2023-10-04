@@ -6,6 +6,6 @@ export function createTag(tag: string, content: string = "") {
   return `{% ${tag} ${content} %}`;
 }
 
-export function createFilter(filter: string, content: string = "") {
+export function createFilter(content: string, filter: string) {
   return `{{ ${content}|${filter} }}`;
 }
