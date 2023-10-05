@@ -2,21 +2,33 @@
 import { Image } from "astro:assets";
 import Layout from "~/layouts/Layout.astro";
 import mainCCTVImage from "~/assets/main-cctv.jpg";
+import RoomListItem from "~/components/RoomListItem.astro";
 import { createVar, createFilter, createTag } from "~/uitls/django";
 ---
 
 <Layout title="cctv">
-  <main class="container mx-auto md:p-2">
-    <div class="flex justify-center">
-      <Image
-        src={mainCCTVImage}
-        alt="CCTV Image"
-        class="rounded-lg shadow-md md:max-w-[12rem]"
-        transition:name="main-cctv-image"
-      />
-    </div>
-    <div>
-      <a href="/room" class="link link-primary hover:link-hover">Room</a>
+  <main class="container mx-auto md:p-4 1080p:p-6">
+    <div class="flex flex-col gap-4 md:gap-6">
+      <div class="flex justify-center">
+        <Image
+          src={mainCCTVImage}
+          alt="CCTV Image"
+          class="rounded-lg shadow-md md:max-w-[12rem]"
+          transition:name="main-cctv-image"
+        />
+      </div>
+      <div>
+        <ul
+          class="grid grid-cols-2 flex-wrap gap-4 md:grid-cols-3 xl:grid-cols-4 1080p:grid-cols-5"
+        >
+          <RoomListItem room={"cctv1"} />
+          <RoomListItem room={"cctv2"} />
+          <RoomListItem room={"cctv3"} />
+          <RoomListItem room={"cctv4"} />
+          <RoomListItem room={"cctv5"} />
+          <RoomListItem room={"cctv6"} />
+        </ul>
+      </div>
     </div>
   </main>
 </Layout>
