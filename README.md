@@ -13,6 +13,30 @@ npm run build
 
 Generated files are located under `./dist/` folder
 
+Under `./dist/` folder, html files will be generated. Put those files in django `templates` folder.
+Also, Astro generate `static` folder. Copy files to `static` folder in django project.
+
+Django project folder structure should look like this
+
+```
+django-project/
+└── chat/
+    ├── views.py
+    ├── urls.py
+    ├── ...
+    └── templates/
+        └── chat/
+            ├── index.html
+            ├── room.html
+            ├── cctv.html
+            └── favicon.svg
+    └── static/
+        ├── cctv.123456.css
+        ├── hoisted.asdfgjk.js
+        ├── main-cctv.asadfklj.jpg
+        └── ...
+```
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
