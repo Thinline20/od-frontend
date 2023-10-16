@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 import mainCCTVImage from "~/assets/main-cctv.jpg";
 ---
 
 <Layout title="Home">
   <main class="container mx-auto md:p-2">
-    <a href="/cctv" class="btn btn-ghost hero h-full">
+    <a href="/chat/cctv" class="btn btn-ghost hero h-full">
       <div class="hero-content flex-col md:flex-row md:gap-12">
         <Image
           src={mainCCTVImage}

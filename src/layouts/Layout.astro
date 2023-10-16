@@ -13,7 +13,7 @@ const { title, useTransition = true } = Astro.props;
 <html lang="en" data-theme="light">
   <head>
     {useTransition && <ViewTransitions />}
-    <script>
+    <!-- <script>
       document.addEventListener("astro:page-load", () => {
         const themeSelect = document.getElementById("theme");
 
@@ -32,7 +32,7 @@ const { title, useTransition = true } = Astro.props;
         const theme = localStorage.getItem("theme");
         document.documentElement.setAttribute("data-theme", theme);
       });
-    </script>
+    </script> -->
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -43,15 +43,15 @@ const { title, useTransition = true } = Astro.props;
   <body>
     <header class="container navbar mx-auto 1080p:max-w-screen-2xl">
       <nav class="flex-1">
-        <a href="/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
+        <a href="/chat/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
           ><span>AI</span><span class="text-error">SW</span></a
         >
       </nav>
       <div class="flex-none">
-        <select name="theme" id="theme" class="select" transition:persist>
+        <!-- <select name="theme" id="theme" class="select" transition:persist>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
-        </select>
+        </select> -->
       </div>
     </header>
     <slot />
