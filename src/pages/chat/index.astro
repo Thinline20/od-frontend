@@ -3,24 +3,48 @@ import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
 import mainCCTVImage from "~/assets/main-cctv.jpg";
+import mainVideoImage from "~/assets/main-video.jpg";
 ---
 
 <Layout title="Home">
   <main class="container mx-auto md:p-2">
-    <a href="/chat/cctv" class="btn btn-ghost hero h-full">
-      <div class="hero-content flex-col md:flex-row md:gap-12">
-        <Image
-          src={mainCCTVImage}
-          alt="CCTV Image"
-          class="w-full rounded-lg shadow-md md:max-w-sm"
-          transition:name="main-cctv-image"
-        />
-        <div class="flex w-full flex-col gap-2 text-left md:gap-4">
-          <h2 class="text-3xl font-bold md:text-5xl">CCTV</h2>
-          <p>Get object detected footage from CCTV</p>
+    <div>
+      <a href="/chat/cctv" class="btn btn-ghost hero h-full">
+        <div class="hero-content flex-col md:flex-row md:gap-12">
+          <Image
+            src={mainCCTVImage}
+            alt="CCTV Image"
+            class="aspect-video w-full rounded-lg shadow-md md:w-96"
+            transition:name="main-cctv-image"
+          />
+          <div class="flex w-full flex-col gap-2 text-left md:gap-4">
+            <h2 class="text-3xl font-bold tracking-wider md:text-5xl">CCTV</h2>
+            <p class="text-sm md:w-96 md:text-base">
+              Get object detected footage from CCTV
+            </p>
+          </div>
         </div>
-      </div>
-    </a>
-    <div class="divider"></div>
+      </a>
+      <div class="divider"></div>
+      <a href="/chat/video" class="btn btn-ghost hero h-full">
+        <div class="hero-content flex-col md:flex-row-reverse md:gap-12">
+          <Image
+            src={mainVideoImage}
+            alt="Video Image"
+            class="aspect-video w-full rounded-lg shadow-md md:w-96"
+            transition:name="main-video-image"
+          />
+          <div
+            class="flex w-full flex-col gap-2 text-left md:gap-4 md:text-right"
+          >
+            <h2 class="text-3xl font-bold tracking-wider md:text-5xl">Video</h2>
+            <p class="text-sm md:w-96 md:text-base">
+              Upload video to the server
+            </p>
+          </div>
+        </div>
+      </a>
+      <div class="divider"></div>
+    </div>
   </main>
 </Layout>

@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout title="login">
+  <main class="container mx-auto h-full md:p-2">
+    <div class="mt-12 flex w-full flex-col items-center">
+      <form
+        action=""
+        method="post"
+        class="flex w-full flex-col gap-4 p-4 md:max-w-[48rem] md:gap-8 md:p-8 lg:p-16 md:border-2 md:rounded-lg md:shadow-md"
+      >
+        <h2 class="text-2xl md:text-4xl font-bold tracking-wide">Login</h2>
+        <div class="form-control">
+          <label for="id" class="label">
+            <span class="label-text">ID</span>
+          </label>
+          <input
+            name="id"
+            id="id"
+            type="text"
+            placeholder="example123"
+            class="input input-bordered w-full lg:input-lg"
+          />
+        </div>
+        <div class="form-control">
+          <label for="password" class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            placeholder="**********"
+            class="input input-bordered w-full lg:input-lg"
+          />
+        </div>
+        <div class="flex justify-end gap-2 lg:gap-6">
+          <button type="reset" class="btn btn-neutral lg:btn-lg">Reset</button>
+          <button type="submit" class="btn btn-primary lg:btn-lg">Login</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</Layout>
