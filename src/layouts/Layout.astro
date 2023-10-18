@@ -41,19 +41,23 @@ const { title, useTransition = true } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header class="container navbar mx-auto 1080p:max-w-screen-2xl">
-      <nav class="flex-1">
-        <a href="/chat/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
-          ><span>AI</span><span class="text-error">SW</span></a
-        >
-      </nav>
-      <div class="flex-none">
-        <!-- <select name="theme" id="theme" class="select" transition:persist>
+    <div id="app" class="flex h-screen w-screen flex-col">
+      <header class="flex-0 container navbar mx-auto 1080p:max-w-screen-2xl">
+        <nav class="flex-1">
+          <a href="/chat/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
+            ><span>AI</span><span class="text-error">SW</span></a
+          >
+        </nav>
+        <div class="flex-none">
+          <!-- <select name="theme" id="theme" class="select" transition:persist>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
         </select> -->
+        </div>
+      </header>
+      <div class="flex-1">
+        <slot />
       </div>
-    </header>
-    <slot />
+    </div>
   </body>
 </html>
