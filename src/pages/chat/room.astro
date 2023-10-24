@@ -1,12 +1,13 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import { createFilter } from "~/uitls/django";
+
 import placeholderImage from "~/assets/placeholder.jpg";
 ---
 
 <Layout title="Room" useTransition={false}>
-  <main class="container mx-auto p-4">
-    <div class="flex flex-col gap-4">
+  <main class="container mx-auto h-full p-4">
+    <div class="flex h-full flex-col gap-4">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
         <div
           class="col-span-3 aspect-video overflow-hidden rounded-lg bg-base-300"
@@ -43,7 +44,12 @@ import placeholderImage from "~/assets/placeholder.jpg";
           </div>
         </div>
       </div>
-      {createFilter("room-name", 'json_script:"room-name"')}
+      <!-- statistics -->
+      <div class="container h-full">
+        <div>
+          <canvas id="object-count"></canvas>
+        </div>
+      </div>
     </div>
   </main>
   <script>
@@ -91,5 +97,39 @@ import placeholderImage from "~/assets/placeholder.jpg";
       );
       messageInputDom.value = "";
     };
+  </script>
+  <script>
+    import Chart from "chart.js/auto";
+
+    const getRandom = () => Math.floor(Math.random() * 100);
+
+    var barchartOptions = {
+      type: "bar",
+      data: {
+        labels: ["Object 1", "Object 2", "Object 3", "Object 4"],
+        datasets: [{}],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    };
+
+    if (document.getElementById("object-count")) {
+      const objectCountChart = new Chart(
+        document.getElementById("object-count"),
+        barchartOptions,
+      );
+
+      setInterval(() => {
+        objectCountChart.data.datasets.forEach((dataset) => {
+          dataset.data = [getRandom(), getRandom(), getRandom(), getRandom()];
+        });
+        objectCountChart.update("none");
+      }, 500);
+    }
   </script>
 </Layout>
