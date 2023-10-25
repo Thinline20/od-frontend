@@ -46,8 +46,19 @@ import placeholderImage from "~/assets/placeholder.jpg";
       </div>
       <!-- statistics -->
       <div class="container h-full">
-        <div>
-          <canvas id="object-count"></canvas>
+        <div class="flex gap-4">
+          <div class="flex w-fit flex-col gap-0">
+            <h3 class="text-center text-xl">Detected Object</h3>
+            <div class="h-[360px] w-[480px]">
+              <canvas id="object-count"></canvas>
+            </div>
+          </div>
+          <div class="flex w-fit flex-col gap-0">
+            <h3 class="">A</h3>
+            <div class="h-[360px] w-[480px]">
+              <canvas id="weekly-accidents"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -103,16 +114,36 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
     const getRandom = () => Math.floor(Math.random() * 100);
 
+    function changeDataset(chart: Chart, dataset: [], animation = false) {
+      chart.data.datasets[0].data = dataset;
+
+      if (animation) {
+        chart.update();
+      } else {
+        chart.update("none");
+      }
+    }
+
     var barchartOptions = {
       type: "bar",
       data: {
-        labels: ["Object 1", "Object 2", "Object 3", "Object 4"],
-        datasets: [{}],
+        labels: ["Car", "Truck", "Bus", "Bike"],
+        datasets: [
+          {
+            data: [0, 0, 0, 0],
+          },
+        ],
       },
       options: {
         scales: {
           y: {
             beginAtZero: true,
+            suggestedMax: 100,
+          },
+        },
+        plugins: {
+          legend: {
+            // display: false,
           },
         },
       },
@@ -125,10 +156,44 @@ import placeholderImage from "~/assets/placeholder.jpg";
       );
 
       setInterval(() => {
-        objectCountChart.data.datasets.forEach((dataset) => {
-          dataset.data = [getRandom(), getRandom(), getRandom(), getRandom()];
-        });
-        objectCountChart.update("none");
+        changeDataset(
+          objectCountChart,
+          [getRandom(), getRandom(), getRandom(), getRandom()],
+          false,
+        );
+      }, 500);
+    }
+
+    let doughnutChartOptions = {
+      type: "doughnut",
+      data: {
+        labels: ["Car", "Truck", "Bus", "Bike"],
+        datasets: [
+          {
+            data: [0, 0, 0, 0],
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: {
+          },
+        },
+      },
+    };
+
+    if (document.getElementById("weekly-accidents")) {
+      const doughnutChart = new Chart(
+        document.getElementById("weekly-accidents"),
+        doughnutChartOptions,
+      );
+
+      setInterval(() => {
+        changeDataset(
+          doughnutChart,
+          [getRandom(), getRandom(), getRandom(), getRandom()],
+          false,
+        );
       }, 500);
     }
   </script>
