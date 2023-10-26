@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import Layout from "~/layouts/Layout.astro";
+import MainVideoImage from "~/assets/main-video.jpg";
+---
+
+<Layout title="video">
+  <main class="container mx-auto flex h-full justify-center">
+    <div>
+      <Image
+        src={MainVideoImage}
+        alt="main video"
+        transition:name="main-video-image"
+        class="w-80"
+      />
+    </div>
+  </main>
+</Layout>
