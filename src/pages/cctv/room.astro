@@ -6,7 +6,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 ---
 
 <Layout title="Room" useTransition={false}>
-  <main class="container mx-auto h-full p-4">
+  <main class="container flex h-full justify-center p-8">
     <div class="flex h-full flex-col gap-4">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
         <div
@@ -19,23 +19,22 @@ import placeholderImage from "~/assets/placeholder.jpg";
             transition:name="main-cctv-image"
           />
         </div>
-        <div class="col-span-2 grid gap-4">
+        <div class="col-span-2 flex flex-col gap-4">
           <textarea
-            id="chat-loddg"
+            id="cctv-log"
             readonly
-            class="textarea textarea-bordered min-h-[16rem] w-full resize-none lg:min-h-0"
+            class="textarea textarea-bordered min-h-[16rem] flex-1 resize-none lg:min-h-0"
           ></textarea>
           <div class="flex flex-col gap-4">
             <input
               type="text"
-              id="chat-message-input"
+              id="cctv-message-input"
               placeholder="Sent text"
-              class="input input-bordered flex-1"
+              class="sr-only"
             />
             <div class="flex justify-end gap-2">
-              <button id="chat-clear" class="btn btn-outline">Clear</button>
               <input
-                id="chat-message-submit"
+                id="cctv-message-submit"
                 type="button"
                 value="Send"
                 class="btn btn-primary btn-outline"
@@ -45,7 +44,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
         </div>
       </div>
       <!-- statistics -->
-      <div class="container h-full">
+      <div class="w-fit">
         <div class="flex gap-4">
           <div class="flex w-fit flex-col gap-0">
             <h3 class="text-center text-xl">Detected Object</h3>
@@ -54,8 +53,8 @@ import placeholderImage from "~/assets/placeholder.jpg";
             </div>
           </div>
           <div class="flex w-fit flex-col gap-0">
-            <h3 class="">A</h3>
-            <div class="h-[360px] w-[480px]">
+            <h3 class="text-center text-xl">A</h3>
+            <div class="h-[360px] w-[360px]">
               <canvas id="weekly-accidents"></canvas>
             </div>
           </div>
@@ -63,58 +62,41 @@ import placeholderImage from "~/assets/placeholder.jpg";
       </div>
     </div>
   </main>
-  <script>
-    const mainImg = document.querySelector("#main-img");
+  <script is:inline>
+  const mainImg = document.querySelector("#main-img");
 
-    document.querySelector("#chat-clear").onclick = function () {
-      document.querySelector("#chat-message-input").value = "";
-    };
+  document.querySelector("#cctv-clear").onclick = function () {
+    document.querySelector("#cctv-message-input").value = "";
+  };
 
-    const roomName = JSON.parse(
-      document.getElementById("room-name").textContent,
+  const roomName = new URLSearchParams(window.location.search).get("name");
+
+  cctvSocket.onmessage = function (e) {
+    const data = JSON.parse(e.data);
+    // document.querySelector("#cctv-log").value += data.message + "\n";
+    document.querySelector("#cctv-log").value = data.message;
+    mainImg.src = "data:image/png;base64," + data.frame;
+  };
+
+  document.querySelector("#cctv-message-submit").onclick = function (e) {
+    cctvSocket.send(
+      JSON.stringify({
+        message: "test",
+      }),
     );
-
-    const chatSocket = new WebSocket(
-      "ws://" + window.location.host + "/ws/chat/" + roomName + "/",
-    );
-
-    chatSocket.onmessage = function (e) {
-      const data = JSON.parse(e.data);
-      // document.querySelector("#chat-log").value += data.message + "\n";
-      document.querySelector("#chat-log").value = data.message;
-      mainImg.src = "data:image/png;base64," + data.frame;
-    };
-
-    chatSocket.onclose = function (e) {
-      console.error("Chat socket closed unexpectedly");
-    };
-
-    document.querySelector("#chat-message-input").focus();
-    document.querySelector("#chat-message-input").onkeyup = function (e) {
-      if (e.key === "Enter") {
-        // enter, return
-        document.querySelector("#chat-message-submit").click();
-      }
-    };
-
-    document.querySelector("#chat-message-submit").onclick = function (e) {
-      const messageInputDom = document.querySelector("#chat-message-input");
-      console.log(messageInputDom.value);
-      const message = messageInputDom.value;
-      chatSocket.send(
-        JSON.stringify({
-          message: message,
-        }),
-      );
-      messageInputDom.value = "";
-    };
+  };
   </script>
   <script>
     import Chart from "chart.js/auto";
+    import { type ChartItem, type ChartConfiguration } from "chart.js";
 
     const getRandom = () => Math.floor(Math.random() * 100);
 
-    function changeDataset(chart: Chart, dataset: [], animation = false) {
+    function changeDataset(
+      chart: Chart,
+      dataset: Array<number>,
+      animation = false,
+    ) {
       chart.data.datasets[0].data = dataset;
 
       if (animation) {
@@ -124,7 +106,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     }
 
-    var barchartOptions = {
+    var barchartOptions: ChartConfiguration = {
       type: "bar",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike"],
@@ -151,7 +133,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
     if (document.getElementById("object-count")) {
       const objectCountChart = new Chart(
-        document.getElementById("object-count"),
+        document.getElementById("object-count") as ChartItem,
         barchartOptions,
       );
 
@@ -164,7 +146,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }, 500);
     }
 
-    let doughnutChartOptions = {
+    let doughnutChartOptions: ChartConfiguration = {
       type: "doughnut",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike"],
@@ -176,15 +158,14 @@ import placeholderImage from "~/assets/placeholder.jpg";
       },
       options: {
         plugins: {
-          legend: {
-          },
+          legend: {},
         },
       },
     };
 
     if (document.getElementById("weekly-accidents")) {
       const doughnutChart = new Chart(
-        document.getElementById("weekly-accidents"),
+        document.getElementById("weekly-accidents") as ChartItem,
         doughnutChartOptions,
       );
 
