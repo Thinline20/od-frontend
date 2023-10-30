@@ -6,7 +6,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 ---
 
 <Layout title="Room" useTransition={false}>
-  <main class="container flex h-full justify-center p-8">
+  <main class="container mx-auto flex h-full justify-center p-8">
     <div class="flex h-full flex-col gap-4">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
         <div
@@ -19,72 +19,85 @@ import placeholderImage from "~/assets/placeholder.jpg";
             transition:name="main-cctv-image"
           />
         </div>
-        <div class="col-span-2 flex flex-col gap-4">
-          <textarea
-            id="cctv-log"
-            readonly
-            class="textarea textarea-bordered min-h-[16rem] flex-1 resize-none lg:min-h-0"
-          ></textarea>
-          <div class="flex flex-col gap-4">
-            <input
-              type="text"
-              id="cctv-message-input"
-              placeholder="Sent text"
-              class="sr-only"
-            />
-            <div class="flex justify-end gap-2">
-              <input
-                id="cctv-message-submit"
-                type="button"
-                value="Send"
-                class="btn btn-primary btn-outline"
-              />
+        <!-- statistics -->
+        <div class="col-span-2 w-full">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex w-fit flex-col gap-0">
+              <h3 class="text-center text-xl">Detected Object</h3>
+              <div class="w-full">
+                <canvas id="object-count"></canvas>
+              </div>
+            </div>
+            <div class="flex w-fit flex-col gap-0">
+              <h3 class="text-center text-xl">A</h3>
+              <div class="w-[360px]">
+                <canvas id="weekly-accidents"></canvas>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- statistics -->
-      <div class="w-fit">
-        <div class="flex gap-4">
-          <div class="flex w-fit flex-col gap-0">
-            <h3 class="text-center text-xl">Detected Object</h3>
-            <div class="h-[360px] w-[480px]">
-              <canvas id="object-count"></canvas>
-            </div>
-          </div>
-          <div class="flex w-fit flex-col gap-0">
-            <h3 class="text-center text-xl">A</h3>
-            <div class="h-[360px] w-[360px]">
-              <canvas id="weekly-accidents"></canvas>
-            </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="grid flex-1 gap-4 md:min-h-[16rem] md:grid-cols-2">
+          <textarea
+            id="cctv-log"
+            readonly
+            class="textarea textarea-bordered h-full min-h-[16rem] resize-none md:min-h-0"
+          ></textarea>
+          <textarea
+            id="accident-log"
+            class="textarea textarea-bordered h-full min-h-[16rem] resize-none md:min-h-0"
+          ></textarea>
+        </div>
+        <div class="flex flex-col gap-4">
+          <input
+            type="text"
+            id="cctv-message-input"
+            placeholder="Sent text"
+            class="sr-only"
+          />
+          <div class="flex justify-end gap-2">
+            <input
+              id="cctv-message-submit"
+              type="button"
+              value="Send"
+              class="btn btn-primary btn-outline"
+            />
           </div>
         </div>
       </div>
     </div>
   </main>
-  <script is:inline>
-  const mainImg = document.querySelector("#main-img");
+  <script>
+    const roomName = new URLSearchParams(window.location.search).get("name");
+    const sendMessage = "test";
 
-  document.querySelector("#cctv-clear").onclick = function () {
-    document.querySelector("#cctv-message-input").value = "";
-  };
-
-  const roomName = new URLSearchParams(window.location.search).get("name");
-
-  cctvSocket.onmessage = function (e) {
-    const data = JSON.parse(e.data);
-    // document.querySelector("#cctv-log").value += data.message + "\n";
-    document.querySelector("#cctv-log").value = data.message;
-    mainImg.src = "data:image/png;base64," + data.frame;
-  };
-
-  document.querySelector("#cctv-message-submit").onclick = function (e) {
-    cctvSocket.send(
-      JSON.stringify({
-        message: "test",
-      }),
+    const cctvSocket = new WebSocket(
+      "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
     );
-  };
+
+    // Set the log data to the textarea and set the video frames to the cctv-image
+    cctvSocket.onmessage = function (e) {
+      const data = JSON.parse(e.data);
+
+      // document.querySelector("#cctv-log").value += data.message + "\n";
+      document.querySelector<HTMLTextAreaElement>("#cctv-log")!.value =
+        data.message;
+      document.querySelector<HTMLTextAreaElement>("#accident-log")!.value =
+        data.message;
+      document.querySelector<HTMLImageElement>("#main-img")!.src =
+        "data:image/png;base64," + data.frame;
+    };
+
+    document.querySelector<HTMLButtonElement>("#cctv-message-submit")!.onclick =
+      function (e) {
+        cctvSocket.send(
+          JSON.stringify({
+            message: sendMessage,
+          }),
+        );
+      };
   </script>
   <script>
     import Chart from "chart.js/auto";
