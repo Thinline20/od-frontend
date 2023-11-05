@@ -49,10 +49,13 @@ const { title, useTransition = true } = Astro.props;
           >
         </nav>
         <div class="flex-none">
-          <!-- <select name="theme" id="theme" class="select" transition:persist>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select> -->
+          <div class="flex items-center justify-center gap-4">
+            <slot name="header" />
+            <!-- <select name="theme" id="theme" class="select" transition:persist>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select> -->
+          </div>
         </div>
       </header>
       <div class="flex-1">

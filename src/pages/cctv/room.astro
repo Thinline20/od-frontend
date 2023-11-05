@@ -1,11 +1,26 @@
 ---
+import { Icon } from "astro-icon";
 import Layout from "~/layouts/Layout.astro";
+import AccidentList from "~/components/AccidentList";
+import LogList from "~/components/LogList";
 import { createFilter } from "~/uitls/django";
-
+import IoStartChart from "~/components/icons/IoStatsChart";
 import placeholderImage from "~/assets/placeholder.jpg";
 ---
 
 <Layout title="Room" useTransition={false}>
+  <div slot="header">
+    <a
+      id="statistics-link"
+      href=""
+      class="btn btn-ghost flex items-center gap-[6px] capitalize"
+    >
+      <span class="text-xl">Statistics</span>
+      <span class="text-2xl text-primary">
+        <IoStartChart />
+      </span>
+    </a>
+  </div>
   <main class="container mx-auto flex h-full justify-center p-8">
     <div class="flex h-full flex-col gap-4">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
@@ -30,7 +45,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
             </div>
             <div class="flex w-fit flex-col gap-0">
               <h3 class="text-center text-xl">A</h3>
-              <div class="w-[360px]">
+              <div class="max-w-[360px]">
                 <canvas id="weekly-accidents"></canvas>
               </div>
             </div>
@@ -40,15 +55,14 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       <div class="flex flex-col gap-4">
         <div class="grid flex-1 gap-4 md:min-h-[16rem] md:grid-cols-2">
-          <textarea
-            id="cctv-log"
-            readonly
-            class="textarea textarea-bordered h-full min-h-[16rem] resize-none md:min-h-0"
-          ></textarea>
-          <textarea
-            id="accident-log"
-            class="textarea textarea-bordered h-full min-h-[16rem] resize-none md:min-h-0"
-          ></textarea>
+          <div>
+            <h3>Log List</h3>
+            <LogList client:load />
+          </div>
+          <div>
+            <h3>Accident List</h3>
+            <AccidentList client:only="solid" />
+          </div>
         </div>
         <div class="flex flex-col gap-4">
           <input
@@ -57,47 +71,47 @@ import placeholderImage from "~/assets/placeholder.jpg";
             placeholder="Sent text"
             class="sr-only"
           />
-          <div class="flex justify-end gap-2">
-            <input
-              id="cctv-message-submit"
-              type="button"
-              value="Send"
-              class="btn btn-primary btn-outline"
-            />
-          </div>
         </div>
       </div>
     </div>
   </main>
   <script>
+    import { addLog } from "~/data/log";
+
     const roomName = new URLSearchParams(window.location.search).get("name");
-    const sendMessage = "test";
+    const message = "test";
 
-    const cctvSocket = new WebSocket(
-      "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
-    );
+    document.querySelector<HTMLAnchorElement>("#statistics-link")!.href =
+      "/cctv/statistics?name=" + roomName;
 
-    // Set the log data to the textarea and set the video frames to the cctv-image
-    cctvSocket.onmessage = function (e) {
-      const data = JSON.parse(e.data);
+    // const cctvSocket = new WebSocket(
+    //   "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
+    // );
 
-      // document.querySelector("#cctv-log").value += data.message + "\n";
-      document.querySelector<HTMLTextAreaElement>("#cctv-log")!.value =
-        data.message;
-      document.querySelector<HTMLTextAreaElement>("#accident-log")!.value =
-        data.message;
-      document.querySelector<HTMLImageElement>("#main-img")!.src =
-        "data:image/png;base64," + data.frame;
-    };
+    // // Set the log data to the textarea and set the video frames to the cctv-image
+    // cctvSocket.onmessage = function (e) {
+    //   const data = JSON.parse(e.data);
 
-    document.querySelector<HTMLButtonElement>("#cctv-message-submit")!.onclick =
-      function (e) {
-        cctvSocket.send(
-          JSON.stringify({
-            message: sendMessage,
-          }),
-        );
-      };
+    //   document.querySelector<HTMLTextAreaElement>("#accident-log")!.value =
+    //     data.message;
+    //   document.querySelector<HTMLImageElement>("#main-img")!.src =
+    //     "data:image/png;base64," + data.frame;
+
+    //   updateLogList(data, sharedLogList);
+    //   updateLogList(data, sharedAccidentList);
+    // };
+
+    let logNo = 0;
+    let accidentNo = 0;
+    setInterval(() => {
+      // cctvSocket.send(
+      //   JSON.stringify({
+      //     status: "active",
+      //   }),
+      // );
+      addLog("log", logNo++);
+      addLog("accident", accidentNo++);
+    }, 1000);
   </script>
   <script>
     import Chart from "chart.js/auto";

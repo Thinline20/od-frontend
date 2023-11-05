@@ -1,11 +1,13 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "F:/dev/python/ai/object-detection/od-frontend",
     "paths": {
       "~/*": [
         "src/*"
       ]
-    }
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }

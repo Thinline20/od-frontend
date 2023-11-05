@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 import Layout from "~/layouts/Layout.astro";
 import mainCCTVImage from "~/assets/main-cctv.jpg";
-import RoomListItem from "~/components/RoomListItem.astro";
+import RoomListItem from "~/components/RoomListItem";
 import { createVar, createFilter, createTag } from "~/uitls/django";
 ---
 
 <Layout title="cctv">
-  <main class="container mx-auto p-4 1080p:p-6">
-    <div class="mx-auto mb-4 md:mb-6 1080p:max-w-screen-2xl">
+  <main class="container mx-auto py-4 px-8 1080p:p-8 1080p:max-w-screen-2xl">
+    <div class="mx-auto mb-4 md:mb-6 xl:mb-8">
       <div class="flex gap-4">
         <Image
           src={mainCCTVImage}

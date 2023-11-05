@@ -1,0 +1,64 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import BiSolidCctv from "~/components/icons/BiSolidCctv";
+import { createVar, createFilter, createTag } from "~/uitls/django";
+---
+
+<Layout title="">
+  <div slot="header">
+    <a
+      id="return-link"
+      href=""
+      class="btn btn-ghost flex items-center gap-[6px] capitalize"
+    >
+      <span class="text-xl">Return to CCTV</span>
+      <span class="text-2xl text-primary">
+        <BiSolidCctv />
+      </span>
+    </a>
+  </div>
+  <main class="container mx-auto h-full p-8">
+    <div class="grid h-full w-full grid-cols-2">
+      <div class="col-span-2">
+        <h1 class="text-4xl font-bold">Daily Log</h1>
+        <canvas id="daily-log"></canvas>
+      </div>
+      <div>
+        <h1 class="text-4xl font-bold">Hourly stat</h1>
+        <canvas id="traffic-hourly"></canvas>
+      </div>
+      <div>
+        <h1 class="text-4xl font-bold">Hourly Accidents</h1>
+        <canvas id="accident-hourly"></canvas>
+      </div>
+    </div>
+  </main>
+  <script is:inline>
+    const roomName = new URLSearchParams(window.location.search).get("name");
+
+    document.querySelector("#return-link").href = `/cctv/room?name=${roomName}`;
+
+    // let log = {{ loglist|safe }};
+    let log = {
+      fields: {
+        log: '{"a": 1, "b": 2, "c": 3}',
+      },
+    };
+    let objects;
+
+    log.forEach((element) => {
+      const json = JSON.parse(element["fields"].log);
+
+      Object.keys(json).forEach((key) => {
+        if (objects[key] === undefined) {
+          objects[key] = json[key];
+        } else {
+          objects[key] += json[key];
+        }
+      });
+    });
+
+    const labels = Object.keys(objects);
+    const data = Object.values(objects);
+  </script>
+</Layout>
