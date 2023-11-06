@@ -41,14 +41,14 @@ const { title, useTransition = true } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div id="app" class="flex h-screen w-screen flex-col">
+    <div id="app" class="flex h-screen max-w-screen flex-col">
       <header class="flex-0 container navbar mx-auto 1080p:max-w-screen-2xl">
         <nav class="flex-1">
           <a href="/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
             ><span>AI</span><span class="text-error">SW</span></a
           >
         </nav>
-        <div class="flex-none">
+        <nav class="flex-none">
           <div class="flex items-center justify-center gap-4">
             <slot name="header" />
             <!-- <select name="theme" id="theme" class="select" transition:persist>
@@ -56,7 +56,7 @@ const { title, useTransition = true } = Astro.props;
             <option value="dark">Dark</option>
           </select> -->
           </div>
-        </div>
+        </nav>
       </header>
       <div class="flex-1">
         <slot />

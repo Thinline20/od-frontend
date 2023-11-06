@@ -1,35 +1,59 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import BiSolidCctv from "~/components/icons/BiSolidCctv";
+import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
 import { createVar, createFilter, createTag } from "~/uitls/django";
 ---
 
 <Layout title="">
-  <div slot="header">
+  <div slot="header" class="flex gap-2 md:gap-4">
     <a
       id="return-link"
       href=""
       class="btn btn-ghost flex items-center gap-[6px] capitalize"
     >
-      <span class="text-xl">Return to CCTV</span>
-      <span class="text-2xl text-primary">
+      <span class="text-lg md:text-xl">Return to CCTV</span>
+      <span class="text-xl text-primary md:text-2xl">
         <BiSolidCctv />
       </span>
     </a>
+    <div class="flex items-center">
+      <label class="btn btn-ghost drawer-button">
+        <input type="checkbox" class="drawer-toggle" />
+        <span class="text-lg md:text-xl">
+          <BsLayoutTextSidebar />
+        </span>
+      </label>
+    </div>
   </div>
   <main class="container mx-auto h-full p-8">
-    <div class="grid h-full w-full grid-cols-2">
-      <div class="col-span-2">
-        <h1 class="text-4xl font-bold">Daily Log</h1>
-        <canvas id="daily-log"></canvas>
+    <div class="drawer lg:drawer-open">
+      <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <div class="grid h-full w-full grid-cols-2">
+          <div class="col-span-2">
+            <h1 class="text-4xl font-bold">Daily Log</h1>
+            <canvas id="daily-log"></canvas>
+          </div>
+          <div>
+            <h1 class="text-4xl font-bold">Hourly stat</h1>
+            <canvas id="traffic-hourly"></canvas>
+          </div>
+          <div>
+            <h1 class="text-4xl font-bold">Hourly Accidents</h1>
+            <canvas id="accident-hourly"></canvas>
+          </div>
+        </div>
       </div>
-      <div>
-        <h1 class="text-4xl font-bold">Hourly stat</h1>
-        <canvas id="traffic-hourly"></canvas>
-      </div>
-      <div>
-        <h1 class="text-4xl font-bold">Hourly Accidents</h1>
-        <canvas id="accident-hourly"></canvas>
+      <div class="drawer-side">
+        <label
+          for="drawer-toggle"
+          aria-label="close sidebar"
+          class="drawer-overlay"></label>
+          <ul class="menu">
+            <li>item 1234567</li>
+            <li>item 2</li>
+          </ul>
       </div>
     </div>
   </main>
@@ -60,5 +84,16 @@ import { createVar, createFilter, createTag } from "~/uitls/django";
 
     const labels = Object.keys(objects);
     const data = Object.values(objects);
+  </script>
+  <script>
+    document.querySelectorAll<HTMLInputElement>(".drawer-toggle").forEach((e) =>
+      e.addEventListener("change", (event) => {
+        document
+          .querySelectorAll<HTMLInputElement>(".drawer-toggle")
+          .forEach((inner) => {
+            inner.checked = e.checked;
+          });
+      }),
+    );
   </script>
 </Layout>
