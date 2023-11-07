@@ -1,28 +1,51 @@
 import { createSignal } from "solid-js";
 import { createStore, produce } from "solid-js/store";
 
-export const [sharedLogList, setSharedLogList] = createStore<any[]>([]);
-export const [sharedAccidentList, setSharedAccidentList] = createStore<any[]>([]);
+export type LogType = {
+  log: object;
+  location: string;
+  time: string;
+};
 
-export const addLog = (type: "log" | "accident", data: any) => {
-  let list;
-  let setList
+export type AccidentType = {
+  log: object;
+  location: string;
+  time: string;
+};
 
-  if (type === "log") {
-    list = sharedLogList;
-    setList = setSharedLogList
-  } else {
-    list = sharedAccidentList;
-    setList = setSharedAccidentList
+export const [sharedLogList, setSharedLogList] = createStore<LogType[]>([]);
+export const [sharedAccidentList, setSharedAccidentList] = createStore<
+  AccidentType[]
+>([]);
+
+export const addLog = (data: LogType) => {
+  setSharedLogList(
+    produce((list) => {
+      list.push(data);
+    }),
+  );
+
+  if (sharedLogList.length > 128) {
+    setSharedLogList(
+      produce((list) => {
+        list.shift();
+      }),
+    );
   }
-  
-  setList(produce((list) => {
-    list.push(data);
-  }))
-  
-  if (list.length > 128) {
-    setList(produce((list) => {
-      list.shift();
-    }))
+};
+
+export const addAccident = (data: AccidentType) => {
+  setSharedAccidentList(
+    produce((list) => {
+      list.push(data);
+    }),
+  );
+
+  if (sharedAccidentList.length > 128) {
+    setSharedAccidentList(
+      produce((list) => {
+        list.shift();
+      }),
+    );
   }
-}
+};

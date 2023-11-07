@@ -22,7 +22,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
     </a>
   </div>
   <main class="container mx-auto flex h-full justify-center p-8">
-    <div class="flex h-full flex-col gap-4">
+    <div class="flex h-full flex-col gap-4 lg:gap-8">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
         <div
           class="col-span-3 aspect-video overflow-hidden rounded-lg bg-base-300"
@@ -44,7 +44,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
               </div>
             </div>
             <div class="flex w-fit flex-col gap-0">
-              <h3 class="text-center text-xl">A</h3>
+              <h3 class="text-center text-xl">Daily Traffic</h3>
               <div class="max-w-[360px]">
                 <canvas id="weekly-accidents"></canvas>
               </div>
@@ -54,13 +54,20 @@ import placeholderImage from "~/assets/placeholder.jpg";
       </div>
 
       <div class="flex flex-col gap-4">
-        <div class="grid flex-1 gap-4 md:min-h-[16rem] md:grid-cols-2">
-          <div>
-            <h3>Log List</h3>
+        <div
+          class="grid flex-1 gap-4 md:min-h-[16rem] md:grid-cols-[1fr,auto,1fr]"
+        >
+          <div class="flex flex-col gap-1 rounded-lg border-2 p-4">
+            <h3 class="text-lg font-bold capitalize tracking-wide">Log List</h3>
+            <p class="text-slate-500">List of detected objects</p>
             <LogList client:load />
           </div>
-          <div>
-            <h3>Accident List</h3>
+          <div class="divider md:divider-horizontal"></div>
+          <div class="flex flex-col gap-1 rounded-lg border-2 p-4">
+            <h3 class="text-lg font-bold capitalize tracking-wide">
+              Accident List
+            </h3>
+            <p class="text-slate-500">List of accidents</p>
             <AccidentList client:only="solid" />
           </div>
         </div>
@@ -76,50 +83,53 @@ import placeholderImage from "~/assets/placeholder.jpg";
     </div>
   </main>
   <script>
-    import { addLog } from "~/data/log";
+    import Chart from "chart.js/auto";
+    import { type ChartItem, type ChartConfiguration } from "chart.js";
+    import {
+      addLog,
+      addAccident,
+      type LogType,
+      type AccidentType,
+    } from "~/data/log";
 
     const roomName = new URLSearchParams(window.location.search).get("name");
-    const message = "test";
+    const message = "active";
+    const location = "서울";
 
     document.querySelector<HTMLAnchorElement>("#statistics-link")!.href =
       "/cctv/statistics?name=" + roomName;
 
-    // const cctvSocket = new WebSocket(
-    //   "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
-    // );
+    var barchartOptions: ChartConfiguration = {
+      type: "bar",
+      data: {
+        labels: ["Car", "Truck", "Bus", "Bike", "Person"],
+        datasets: [
+          {
+            data: [0, 0, 0, 0],
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: 50,
+          },
+        },
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+      },
+    };
 
-    // // Set the log data to the textarea and set the video frames to the cctv-image
-    // cctvSocket.onmessage = function (e) {
-    //   const data = JSON.parse(e.data);
+    const objectCountChart = new Chart(
+      document.getElementById("object-count") as ChartItem,
+      barchartOptions,
+    );
 
-    //   document.querySelector<HTMLTextAreaElement>("#accident-log")!.value =
-    //     data.message;
-    //   document.querySelector<HTMLImageElement>("#main-img")!.src =
-    //     "data:image/png;base64," + data.frame;
-
-    //   updateLogList(data, sharedLogList);
-    //   updateLogList(data, sharedAccidentList);
-    // };
-
-    let logNo = 0;
-    let accidentNo = 0;
-    setInterval(() => {
-      // cctvSocket.send(
-      //   JSON.stringify({
-      //     status: "active",
-      //   }),
-      // );
-      addLog("log", logNo++);
-      addLog("accident", accidentNo++);
-    }, 1000);
-  </script>
-  <script>
-    import Chart from "chart.js/auto";
-    import { type ChartItem, type ChartConfiguration } from "chart.js";
-
-    const getRandom = () => Math.floor(Math.random() * 100);
-
-    function changeDataset(
+    function updateChart(
       chart: Chart,
       dataset: Array<number>,
       animation = false,
@@ -133,53 +143,15 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     }
 
-    var barchartOptions: ChartConfiguration = {
-      type: "bar",
-      data: {
-        labels: ["Car", "Truck", "Bus", "Bike"],
-        datasets: [
-          {
-            data: [0, 0, 0, 0],
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            suggestedMax: 100,
-          },
-        },
-        plugins: {
-          legend: {
-            // display: false,
-          },
-        },
-      },
-    };
+    let dailyStat = [0, 0, 0, 0, 0];
 
-    if (document.getElementById("object-count")) {
-      const objectCountChart = new Chart(
-        document.getElementById("object-count") as ChartItem,
-        barchartOptions,
-      );
-
-      setInterval(() => {
-        changeDataset(
-          objectCountChart,
-          [getRandom(), getRandom(), getRandom(), getRandom()],
-          false,
-        );
-      }, 500);
-    }
-
-    let doughnutChartOptions: ChartConfiguration = {
+    let dailyChartOptions: ChartConfiguration = {
       type: "doughnut",
       data: {
-        labels: ["Car", "Truck", "Bus", "Bike"],
+        labels: ["Car", "Truck", "Bus", "Bike", "Person"],
         datasets: [
           {
-            data: [0, 0, 0, 0],
+            data: [0, 0, 0, 0, 0],
           },
         ],
       },
@@ -190,19 +162,105 @@ import placeholderImage from "~/assets/placeholder.jpg";
       },
     };
 
-    if (document.getElementById("weekly-accidents")) {
-      const doughnutChart = new Chart(
-        document.getElementById("weekly-accidents") as ChartItem,
-        doughnutChartOptions,
+    const dailyChart = new Chart(
+      document.getElementById("weekly-accidents") as ChartItem,
+      dailyChartOptions,
+    );
+
+    const cctvSocket = new WebSocket(
+      "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
+    );
+
+    // Set the log data to the textarea and set the video frames to the cctv-image
+    cctvSocket.onmessage = function (e) {
+      const data = JSON.parse(e.data);
+
+      document.querySelector<HTMLImageElement>("#main-img")!.src =
+        "data:image/png;base64," + data.frame;
+
+      const tempLog = {
+        log: data.message,
+        location: location,
+        time: data.detect_time,
+      } satisfies LogType;
+
+      addLog(tempLog);
+
+      let car = data.car ?? 0;
+      let truck = data.truck ?? 0;
+      let bus = data.bus ?? 0;
+      let bike = data.bike ?? 0;
+      let person = data.person ?? 0;
+
+      updateChart(objectCountChart, [car, truck, bus, bike, person], true);
+
+      dailyStat[0] += car;
+      dailyStat[1] += truck;
+      dailyStat[2] += bus;
+      dailyStat[3] += bike;
+      dailyStat[4] += person;
+
+      updateChart(dailyChart, dailyStat, true);
+
+      if (data.accident_detection !== null) {
+        const tempAccident = {
+          log: data.accident_detection,
+          location: location,
+          time: data.accident_detection.time,
+        } satisfies AccidentType;
+
+        addAccident(tempAccident);
+      }
+
+      if (data.ok !== null) {
+        cctvSocket.send(
+          JSON.stringify({
+            status: "active",
+          }),
+        );
+      }
+    };
+
+    setInterval(() => {
+      const tempLog = {
+        log: {
+          person: 1,
+          car: 2,
+        },
+        location: location,
+        time: "2023-10-28 22:25:17",
+      } satisfies LogType;
+      const tempAccident = {
+        log: {
+          severe: 2,
+          moderate: 1,
+        },
+        location: location,
+        time: "2023-10-28 22:25:17",
+      } satisfies AccidentType;
+
+      addLog(tempLog);
+      addAccident(tempAccident);
+      updateChart(
+        objectCountChart,
+        [
+          tempLog.log.car ?? 0,
+          tempLog.log.truck ?? 0,
+          tempLog.log.bus ?? 0,
+          tempLog.log.bike ?? 0,
+          tempLog.log.person ?? 0,
+        ],
+        true,
       );
 
-      setInterval(() => {
-        changeDataset(
-          doughnutChart,
-          [getRandom(), getRandom(), getRandom(), getRandom()],
-          false,
-        );
-      }, 500);
-    }
+      dailyStat[0] += tempLog.log.car ?? 0;
+      dailyStat[1] += tempLog.log.truck ?? 0;
+      dailyStat[2] += tempLog.log.bus ?? 0;
+      dailyStat[3] += tempLog.log.bike ?? 0;
+      dailyStat[4] += tempLog.log.person ?? 0;
+
+      updateChart(dailyChart, dailyStat, true);
+    }, 1000);
   </script>
+  <script></script>
 </Layout>
