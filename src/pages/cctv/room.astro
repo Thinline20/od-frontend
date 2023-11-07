@@ -221,46 +221,46 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     };
 
-    setInterval(() => {
-      const tempLog = {
-        log: {
-          person: 1,
-          car: 2,
-        },
-        location: location,
-        time: "2023-10-28 22:25:17",
-      } satisfies LogType;
-      const tempAccident = {
-        log: {
-          severe: 2,
-          moderate: 1,
-        },
-        location: location,
-        time: "2023-10-28 22:25:17",
-      } satisfies AccidentType;
+    // setInterval(() => {
+    //   const tempLog = {
+    //     log: {
+    //       person: 1,
+    //       car: 2,
+    //     },
+    //     location: location,
+    //     time: "2023-10-28 22:25:17",
+    //   } satisfies LogType;
+    //   const tempAccident = {
+    //     log: {
+    //       severe: 2,
+    //       moderate: 1,
+    //     },
+    //     location: location,
+    //     time: "2023-10-28 22:25:17",
+    //   } satisfies AccidentType;
 
-      addLog(tempLog);
-      addAccident(tempAccident);
-      updateChart(
-        objectCountChart,
-        [
-          tempLog.log.car ?? 0,
-          tempLog.log.truck ?? 0,
-          tempLog.log.bus ?? 0,
-          tempLog.log.bike ?? 0,
-          tempLog.log.person ?? 0,
-        ],
-        true,
-      );
+    //   addLog(tempLog);
+    //   addAccident(tempAccident);
+    //   updateChart(
+    //     objectCountChart,
+    //     [
+    //       tempLog.log.car ?? 0,
+    //       tempLog.log.truck ?? 0,
+    //       tempLog.log.bus ?? 0,
+    //       tempLog.log.bike ?? 0,
+    //       tempLog.log.person ?? 0,
+    //     ],
+    //     true,
+    //   );
 
-      dailyStat[0] += tempLog.log.car ?? 0;
-      dailyStat[1] += tempLog.log.truck ?? 0;
-      dailyStat[2] += tempLog.log.bus ?? 0;
-      dailyStat[3] += tempLog.log.bike ?? 0;
-      dailyStat[4] += tempLog.log.person ?? 0;
+    //   dailyStat[0] += tempLog.log.car ?? 0;
+    //   dailyStat[1] += tempLog.log.truck ?? 0;
+    //   dailyStat[2] += tempLog.log.bus ?? 0;
+    //   dailyStat[3] += tempLog.log.bike ?? 0;
+    //   dailyStat[4] += tempLog.log.person ?? 0;
 
-      updateChart(dailyChart, dailyStat, true);
-    }, 1000);
+    //   updateChart(dailyChart, dailyStat, true);
+    // }, 1000);
   </script>
   <script></script>
 </Layout>
