@@ -3,7 +3,7 @@ import { sharedAccidentList } from "~/data/log";
 
 export default () => {
   return (
-    <div class="overflow-x-auto h-96">
+    <div class="h-96 overflow-x-auto">
       <table class="table table-pin-rows">
         <thead>
           <tr>
@@ -14,13 +14,23 @@ export default () => {
         </thead>
         <tbody>
           <For each={sharedAccidentList}>
-            {(log) => (
-              <tr>
-                <th>{log.time}</th>
-                <th>{JSON.stringify(log.log)}</th>
-                <th>{log.location}</th>
-              </tr>
-            )}
+            {(log) => {
+              const keys = Object.keys(log.log);
+              const values = Object.values(log.log);
+              const logString = keys
+                .map((key, index) => {
+                  return `${key}: ${values[index]}`;
+                })
+                .join(", ");
+                
+              return (
+                <tr>
+                  <th>{log.time}</th>
+                  <th>{logString}</th>
+                  <th>{log.location}</th>
+                </tr>
+              );
+            }}
           </For>
         </tbody>
       </table>
