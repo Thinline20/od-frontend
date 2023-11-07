@@ -99,7 +99,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
     document.querySelector<HTMLAnchorElement>("#statistics-link")!.href =
       "/cctv/statistics?name=" + roomName;
 
-    var barchartOptions: ChartConfiguration = {
+    const barchartOptions: ChartConfiguration = {
       type: "bar",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike", "Person"],
@@ -129,23 +129,9 @@ import placeholderImage from "~/assets/placeholder.jpg";
       barchartOptions,
     );
 
-    function updateChart(
-      chart: Chart,
-      dataset: Array<number>,
-      animation = false,
-    ) {
-      chart.data.datasets[0].data = dataset;
-
-      if (animation) {
-        chart.update();
-      } else {
-        chart.update("none");
-      }
-    }
-
     let dailyStat = [0, 0, 0, 0, 0];
 
-    let dailyChartOptions: ChartConfiguration = {
+    const dailyChartOptions: ChartConfiguration = {
       type: "doughnut",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike", "Person"],
@@ -171,22 +157,6 @@ import placeholderImage from "~/assets/placeholder.jpg";
       "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
     );
 
-    function waitForCCTVSocket(socket: WebSocket) {
-      setTimeout(() => {
-        if (cctvSocket.readyState === 1) {
-          console.log("Socket ready");
-          socket.send(
-            JSON.stringify({
-              status: message,
-            }),
-          );
-        } else {
-          console.log("Waiting...");
-          waitForCCTVSocket(socket);
-        }
-      }, 10);
-    }
-
     waitForCCTVSocket(cctvSocket);
 
     // Set the log data to the textarea and set the video frames to the cctv-image
@@ -195,20 +165,22 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       document.querySelector<HTMLImageElement>("#main-img")!.src =
         "data:image/png;base64," + data.frame;
+        
+      const parsedLog = JSON.parse(data.object_detection);
 
       const tempLog = {
-        log: data.message,
+        log: parsedLog,
         location: location,
         time: data.detect_time,
       } satisfies LogType;
 
       addLog(tempLog);
 
-      let car = data.car ?? 0;
-      let truck = data.truck ?? 0;
-      let bus = data.bus ?? 0;
-      let bike = data.bike ?? 0;
-      let person = data.person ?? 0;
+      let car = parsedLog.car ?? 0;
+      let truck = parsedLog.truck ?? 0;
+      let bus = parsedLog.bus ?? 0;
+      let bike = parsedLog.bike ?? 0;
+      let person = parsedLog.person ?? 0;
 
       updateChart(objectCountChart, [car, truck, bus, bike, person], false);
 
@@ -222,7 +194,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       if (data.accident_detection !== null) {
         const tempAccident = {
-          log: data.accident_detection,
+          log: JSON.parse(data.accident_detection),
           location: location,
           time: data.accident_detection.time,
         } satisfies AccidentType;
@@ -233,12 +205,51 @@ import placeholderImage from "~/assets/placeholder.jpg";
       if (data.ok !== null) {
         cctvSocket.send(
           JSON.stringify({
-            status: message,
+            message: message,
           }),
         );
       }
     };
 
+    /**
+     * Wait for the socket to be ready
+     * @param socket Target socket
+     */
+    function waitForCCTVSocket(socket: WebSocket) {
+      setTimeout(() => {
+        if (cctvSocket.readyState === 1) {
+          console.log("Socket ready");
+          socket.send(
+            JSON.stringify({
+              message: message,
+            }),
+          );
+        } else {
+          console.log("Waiting...");
+          waitForCCTVSocket(socket);
+        }
+      }, 500);
+    }
+
+    /**
+     * Update the chart with the given data
+     * @param chart Target chart
+     * @param dataset List of data
+     * @param animation Default: false
+     */
+    function updateChart(
+      chart: Chart,
+      dataset: Array<number>,
+      animation = false,
+    ) {
+      chart.data.datasets[0].data = dataset;
+
+      if (animation) {
+        chart.update();
+      } else {
+        chart.update("none");
+      }
+    }
     // setInterval(() => {
     //   const tempLog = {
     //     log: {
@@ -280,5 +291,4 @@ import placeholderImage from "~/assets/placeholder.jpg";
     //   updateChart(dailyChart, dailyStat, true);
     // }, 1000);
   </script>
-  <script></script>
 </Layout>
