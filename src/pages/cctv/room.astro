@@ -113,7 +113,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
         scales: {
           y: {
             beginAtZero: true,
-            suggestedMax: 50,
+            suggestedMax: 20,
           },
         },
         plugins: {
@@ -165,7 +165,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       document.querySelector<HTMLImageElement>("#main-img")!.src =
         "data:image/png;base64," + data.frame;
-        
+
       const parsedLog = JSON.parse(data.object_detection);
 
       const tempLog = {
@@ -196,7 +196,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
         const tempAccident = {
           log: JSON.parse(data.accident_detection),
           location: location,
-          time: data.accident_detection.time,
+          time: data.detect_time,
         } satisfies AccidentType;
 
         addAccident(tempAccident);
