@@ -210,7 +210,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       let bike = data.bike ?? 0;
       let person = data.person ?? 0;
 
-      updateChart(objectCountChart, [car, truck, bus, bike, person], true);
+      updateChart(objectCountChart, [car, truck, bus, bike, person], false);
 
       dailyStat[0] += car;
       dailyStat[1] += truck;
@@ -218,7 +218,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       dailyStat[3] += bike;
       dailyStat[4] += person;
 
-      updateChart(dailyChart, dailyStat, true);
+      updateChart(dailyChart, dailyStat, false);
 
       if (data.accident_detection !== null) {
         const tempAccident = {
