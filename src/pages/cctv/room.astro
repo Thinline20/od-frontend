@@ -171,6 +171,24 @@ import placeholderImage from "~/assets/placeholder.jpg";
       "ws://" + window.location.host + "/ws/cctv/" + roomName + "/",
     );
 
+    function waitForCCTVSocket(socket: WebSocket) {
+      setTimeout(() => {
+        if (cctvSocket.readyState === 1) {
+          console.log("Socket ready");
+          socket.send(
+            JSON.stringify({
+              status: message,
+            }),
+          );
+        } else {
+          console.log("Waiting...");
+          waitForCCTVSocket(socket);
+        }
+      }, 10);
+    }
+
+    waitForCCTVSocket(cctvSocket);
+
     // Set the log data to the textarea and set the video frames to the cctv-image
     cctvSocket.onmessage = function (e) {
       const data = JSON.parse(e.data);
@@ -215,7 +233,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       if (data.ok !== null) {
         cctvSocket.send(
           JSON.stringify({
-            status: "active",
+            status: message,
           }),
         );
       }
