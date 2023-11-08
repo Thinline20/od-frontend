@@ -17,7 +17,7 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       </span>
     </a>
     <div class="flex items-center">
-      <label class="btn btn-ghost drawer-button">
+      <label class="btn btn-ghost drawer-button 2xl:hidden 2xl:invisible">
         <input type="checkbox" class="drawer-toggle" />
         <span class="text-lg md:text-xl">
           <BsLayoutTextSidebar />
@@ -72,6 +72,8 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     }
 
     document.getElementById(`cctv-${cctvId}`)?.classList.add("active");
+    
+    document.querySelector<HTMLAnchorElement>("#return-link")!.href = `/cctv/room?name=${cctvId}`
 
     document.querySelectorAll<HTMLButtonElement>(".cctv-button").forEach((element) => {
       if (element.id == `cctv-${cctvId}`) {
