@@ -47,7 +47,13 @@ import placeholderImage from "~/assets/placeholder.jpg";
             <div class="flex w-fit flex-col gap-0">
               <h3 class="text-center text-xl">Hourly Traffic</h3>
               <div class="max-w-[360px]">
-                <canvas id="weekly-accidents"></canvas>
+                <canvas id="hourly-traffic"></canvas>
+              </div>
+            </div>
+            <div class="col-span-2 w-fit">
+              <h3>Daily Stat</h3>
+              <div class="w-full">
+                <canvas id="daily-stat" />
               </div>
             </div>
           </div>
@@ -159,9 +165,16 @@ import placeholderImage from "~/assets/placeholder.jpg";
     };
 
     const hourlyChart = new Chart(
-      document.getElementById("weekly-accidents") as ChartItem,
+      document.getElementById("hourly-traffic") as ChartItem,
       hourlyChartOptions,
     );
+
+    const dailyChartOptions: ChartConfiguration = {
+      type: "line",
+      data: {
+        labels: ["00", "01", ],
+      }
+    }
 
     const cctvSocket = new WebSocket(
       "ws://" + window.location.host + "/ws/cctv/" + cctvId + "/",
