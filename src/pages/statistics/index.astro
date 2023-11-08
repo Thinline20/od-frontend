@@ -1,0 +1,98 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import BiSolidCctv from "~/components/icons/BiSolidCctv";
+import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
+---
+
+<Layout title="Statistics">
+  <div slot="header" class="flex gap-2 md:gap-4">
+    <a
+      id="return-link"
+      href=""
+      class="btn btn-ghost flex items-center gap-[6px] capitalize"
+    >
+      <span class="text-lg md:text-xl">Return to CCTV</span>
+      <span class="text-xl text-primary md:text-2xl">
+        <BiSolidCctv />
+      </span>
+    </a>
+    <div class="flex items-center">
+      <label class="btn btn-ghost drawer-button">
+        <input type="checkbox" class="drawer-toggle" />
+        <span class="text-lg md:text-xl">
+          <BsLayoutTextSidebar />
+        </span>
+      </label>
+    </div>
+  </div>
+  <main class="container mx-auto h-full p-6 2xl:px-0 2xl:py-8">
+    <div class="drawer 2xl:drawer-open">
+      <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content lg:px-8">
+        main
+      </div>
+      <div class="drawer-side">
+        <label
+          for="drawer-toggle"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        >
+        </label>
+        <div class="h-full w-48 bg-base-200 py-2 2xl:rounded-tr-lg">
+          <ul class="menu rounded-box gap-1">
+            <li class="font-bold">
+              <button id="cctv-1" class="cctv-button">CCTV 1</button>
+            </li>
+            <li class="font-bold">
+              <button id="cctv-2" class="cctv-button">CCTV 2</button>
+            </li>
+            <li class="font-bold">
+              <button id="cctv-3" class="cctv-button">CCTV 3</button>
+            </li>
+            <li class="font-bold">
+              <button id="cctv-4" class="cctv-button">CCTV 4</button>
+            </li>
+            <li class="font-bold">
+              <button id="cctv-5" class="cctv-button">CCTV 5</button>
+            </li>
+            <li class="font-bold">
+              <button id="cctv-6" class="cctv-button">CCTV 6</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    let cctvId = new URLSearchParams(window.location.search).get("cctv");
+
+    if (cctvId === null) {
+      cctvId = "1";
+      window.location.href = `${window.location.protocol}//${window.location.host}/statistics?cctv=${cctvId}`;
+    }
+
+    document.getElementById(`cctv-${cctvId}`)?.classList.add("active");
+
+    document.querySelectorAll<HTMLButtonElement>(".cctv-button").forEach((element) => {
+      if (element.id == `cctv-${cctvId}`) {
+        return
+      }
+
+      const targetCCTV = element.id.at(-1)
+
+      element.addEventListener("click", () => {
+        window.location.href = `${window.location.protocol}//${window.location.host}/statistics?cctv=${targetCCTV}`;
+      })
+    })
+
+    document.querySelectorAll<HTMLInputElement>(".drawer-toggle").forEach((e) =>
+      e.addEventListener("change", (event) => {
+        document
+          .querySelectorAll<HTMLInputElement>(".drawer-toggle")
+          .forEach((inner) => {
+            inner.checked = e.checked;
+          });
+      }),
+    );
+  </script>
+</Layout>
