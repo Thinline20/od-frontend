@@ -38,22 +38,16 @@ import placeholderImage from "~/assets/placeholder.jpg";
         <!-- statistics -->
         <div class="col-span-2 w-full">
           <div class="grid grid-cols-2 gap-4">
-            <div class="flex w-fit flex-col gap-0">
+            <div class="flex w-fit flex-col">
               <h3 class="text-center text-xl">Detected Object</h3>
               <div class="w-full">
                 <canvas id="object-count"></canvas>
               </div>
             </div>
-            <div class="flex w-fit flex-col gap-0">
+            <div class="flex w-fit flex-col">
               <h3 class="text-center text-xl">Hourly Traffic</h3>
               <div class="max-w-[360px]">
                 <canvas id="hourly-traffic"></canvas>
-              </div>
-            </div>
-            <div class="col-span-2 w-fit">
-              <h3>Daily Stat</h3>
-              <div class="w-full">
-                <canvas id="daily-stat" />
               </div>
             </div>
           </div>
@@ -67,11 +61,11 @@ import placeholderImage from "~/assets/placeholder.jpg";
           <div class="flex flex-col gap-2 rounded-lg border-2 p-4">
             <div>
               <h3 class="text-lg font-bold capitalize tracking-wide">
-                Log List
+                Daily traffic
               </h3>
-              <p class="text-slate-500">List of detected objects</p>
+              <p class="text-slate-500">Daily traffic count</p>
             </div>
-            <LogList client:load />
+            <canvas id="daily-stat"></canvas>
           </div>
           <div class="divider md:divider-horizontal"></div>
           <div class="flex flex-col gap-2 rounded-lg border-2 p-4">
@@ -105,19 +99,28 @@ import placeholderImage from "~/assets/placeholder.jpg";
       type AccidentType,
     } from "~/data/log";
 
+    const today = new Date();
+
     const cctvId = new URLSearchParams(window.location.search).get("name");
     const READY_MESSAGE = "ready";
     const ACTIVE_MESSAGE = "active";
     const location = "서울";
     let cctvMetaData;
     let isActive = false;
-    let previousHour = 25;
+    let previousHour = today.getHours();
     let hourlyStat = [0, 0, 0, 0, 0];
+    let dailyStat = Array.from({ length: 5 }, () =>
+      Array.from({ length: 24 }, () => 0),
+    );
+
+    /*
+     * Define Charts
+     */
 
     const imageLoading = document.getElementById("image-loading");
     const mainImage = document.querySelector<HTMLImageElement>("#main-img");
 
-    const barchartOptions: ChartConfiguration = {
+    const objectCountChartOptions: ChartConfiguration = {
       type: "bar",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike", "Person"],
@@ -144,11 +147,11 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
     const objectCountChart = new Chart(
       document.getElementById("object-count") as ChartItem,
-      barchartOptions,
+      objectCountChartOptions,
     );
 
     const hourlyChartOptions: ChartConfiguration = {
-      type: "doughnut",
+      type: "pie",
       data: {
         labels: ["Car", "Truck", "Bus", "Bike", "Person"],
         datasets: [
@@ -172,9 +175,50 @@ import placeholderImage from "~/assets/placeholder.jpg";
     const dailyChartOptions: ChartConfiguration = {
       type: "line",
       data: {
-        labels: ["00", "01", ],
-      }
-    }
+        labels: Array.from({ length: 24 }, (_, i) =>
+          ((i + previousHour + 1) % 24).toString().padStart(2, "0"),
+        ),
+        datasets: [
+          {
+            data: Array.from({ length: 24 }, () => 0),
+            label: "Car",
+          },
+          {
+            data: Array.from({ length: 24 }, () => 0),
+            label: "Truck",
+          },
+          {
+            data: Array.from({ length: 24 }, () => 0),
+            label: "Bus",
+          },
+          {
+            data: Array.from({ length: 24 }, () => 0),
+            label: "Bike",
+          },
+          {
+            data: Array.from({ length: 24 }, () => 0),
+            label: "Person",
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: 10000,
+          },
+        },
+      },
+    };
+
+    const dailyChart = new Chart(
+      document.getElementById("daily-stat") as ChartItem,
+      dailyChartOptions,
+    );
+
+    /*
+     * Main logic
+     */
 
     const cctvSocket = new WebSocket(
       "ws://" + window.location.host + "/ws/cctv/" + cctvId + "/",
@@ -219,9 +263,31 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       updateChart(objectCountChart, [car, truck, bus, bike, person], false);
 
+      if (data.accident_detection !== null) {
+        const tempAccident = {
+          log: JSON.parse(data.accident_detection),
+          location: location,
+          time: data.detect_time,
+        } satisfies AccidentType;
+
+        addAccident(tempAccident);
+      }
+
+      if (data.ok === null) {
+        return;
+      }
+
       const date = new Date(data.detect_time);
 
       if (date.getHours() != previousHour) {
+        previousHour = date.getHours();
+        dailyStat.forEach((value, index) => {
+          value.shift();
+          value.push(hourlyStat[index]);
+          updateChart(dailyChart, value, false, index);
+        });
+        dailyChart.data.labels?.shift();
+        dailyChart.data.labels?.push(previousHour.toString().padStart(2, "0"));
         hourlyStat = [0, 0, 0, 0, 0];
       }
 
@@ -233,19 +299,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
 
       updateChart(hourlyChart, hourlyStat, false);
 
-      if (data.accident_detection !== null) {
-        const tempAccident = {
-          log: JSON.parse(data.accident_detection),
-          location: location,
-          time: data.detect_time,
-        } satisfies AccidentType;
-
-        addAccident(tempAccident);
-      }
-
-      if (data.ok !== null) {
-        sendMessage(cctvSocket, ACTIVE_MESSAGE);
-      }
+      sendMessage(cctvSocket, ACTIVE_MESSAGE);
     };
 
     /**
@@ -302,8 +356,9 @@ import placeholderImage from "~/assets/placeholder.jpg";
       chart: Chart,
       dataset: Array<number>,
       animation = false,
+      target = 0,
     ) {
-      chart.data.datasets[0].data = dataset;
+      chart.data.datasets[target].data = dataset;
 
       if (animation) {
         chart.update();
@@ -312,11 +367,13 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     }
 
+    // test()
+
     function test() {
       setTimeout(() => {
         mainImage?.classList.remove("sr-only");
         imageLoading?.remove();
-        inner()
+        inner();
       }, 1000);
 
       function inner() {
@@ -359,6 +416,22 @@ import placeholderImage from "~/assets/placeholder.jpg";
           hourlyStat[2] += tempLog.log.bus ?? 0;
           hourlyStat[3] += tempLog.log.bike ?? 0;
           hourlyStat[4] += tempLog.log.person ?? 0;
+
+          const date = new Date();
+
+          if (true) {
+            previousHour = date.getHours();
+            dailyStat.forEach((value, index) => {
+              value.shift();
+              value.push(hourlyStat[index]);
+              updateChart(dailyChart, value, false, index);
+            });
+            dailyChart.data.labels?.shift();
+            dailyChart.data.labels?.push(
+              previousHour.toString().padStart(2, "0"),
+            );
+            hourlyStat = [0, 0, 0, 0, 0];
+          }
 
           updateChart(hourlyChart, hourlyStat, true);
         }, 1000);
