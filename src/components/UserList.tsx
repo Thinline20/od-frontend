@@ -7,13 +7,15 @@ import {
   Show,
 } from "solid-js";
 import { createStore, produce } from "solid-js/store";
-import { fetchUsers } from "~/data/user";
+import { fetchUsers, deleteUser } from "~/data/user";
 
 export default () => {
-  const [usersResource, { mutate, refetch }] = createResource(fetchUsers);
+  const [usersResource, { mutate }] = createResource(fetchUsers);
   const [checkList, setCheckList] = createStore<boolean[]>([]);
   const [isAllChecked, setIsAllChecked] = createSignal(false);
+  const [currentUserId, setCurrentUserId] = createSignal<string>("");
   let deleteUserDialogRef: HTMLDialogElement | undefined;
+  let deleteSelectedUsersDialogRef: HTMLDialogElement | undefined;
 
   createEffect(() => {
     if (usersResource.loading) return;
@@ -36,16 +38,23 @@ export default () => {
     );
   };
 
-  const deleteUser = (index: number) => {
-    mutate((users) => users?.filter((_, i) => i !== index));
+  const onDeleteUser = async () => {
+    const res = await deleteUser(currentUserId());
+
+    if (res) {
+      mutate((users) => users?.filter((user) => user.id !== currentUserId()));
+    }
   };
 
-  const deleteSelectedUsers = () => {
-    const ids = usersResource()
+  const onDeleteSelectedUsers = () => {
+    usersResource()
       ?.map((user, i) => (checkList[i] ? user.id : null))
-      .filter((id) => id !== null);
-
-    mutate((users) => users?.filter((user) => !ids?.includes(user.id)));
+      .filter((id) => id !== null)
+      .forEach(async (id) => {
+        if (await deleteUser(id!)) {
+          mutate((users) => users?.filter((user) => user.id !== id));
+        }
+      });
   };
 
   createEffect(() => {
@@ -82,7 +91,7 @@ export default () => {
               <Show when={!usersResource.loading}>
                 <div class="flex justify-end">
                   <button
-                    onclick={deleteSelectedUsers}
+                    onclick={() => deleteSelectedUsersDialogRef?.showModal()}
                     class="btn btn-error btn-sm text-white"
                   >
                     Delete
@@ -98,16 +107,18 @@ export default () => {
               return (
                 <tr>
                   <th>
-                    <label>
-                      <input
-                        type="checkbox"
-                        class="checkbox"
-                        checked={checkList[i()]}
-                        onchange={() => {
-                          toggleCheck(i());
-                        }}
-                      />
-                    </label>
+                    <Show when={user.id !== "admin"}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          class="checkbox"
+                          checked={checkList[i()]}
+                          onchange={() => {
+                            toggleCheck(i());
+                          }}
+                        />
+                      </label>
+                    </Show>
                   </th>
                   <td>{user.id}</td>
                   <td>{user.name}</td>
@@ -119,14 +130,17 @@ export default () => {
                       <button class="btn btn-warning btn-sm text-white">
                         Edit
                       </button>
-                      <button
-                        onclick={() => {
-                          deleteUserDialogRef?.showModal();
-                        }}
-                        class="btn btn-error btn-sm text-white"
-                      >
-                        Delete
-                      </button>
+                      <Show when={user.id !== "admin"}>
+                        <button
+                          onclick={() => {
+                            setCurrentUserId(user.id);
+                            deleteUserDialogRef?.showModal();
+                          }}
+                          class="btn btn-error btn-sm text-white"
+                        >
+                          Delete
+                        </button>
+                      </Show>
                     </div>
                   </td>
                 </tr>
@@ -135,6 +149,36 @@ export default () => {
           </For>
         </tbody>
       </table>
+
+      <dialog
+        id="delete-selected-users"
+        class="modal"
+        ref={deleteSelectedUsersDialogRef}
+      >
+        <div class="modal-box">
+          <h3 class="text-center text-lg font-bold">Confirm deleting users</h3>
+          <p class="py-4">
+            Press ESC key or click the cancel button to cancel.
+          </p>
+          <div class="mt-6 flex justify-end gap-2">
+            <button
+              onclick={() => {
+                onDeleteSelectedUsers();
+                deleteSelectedUsersDialogRef?.close();
+              }}
+              class="btn"
+            >
+              Confirm
+            </button>
+            <button
+              onclick={() => deleteSelectedUsersDialogRef?.close()}
+              class="btn btn-primary"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </dialog>
       <dialog id="delete-user" class="modal" ref={deleteUserDialogRef}>
         <div class="modal-box">
           <h3 class="text-center text-lg font-bold">Confirm deleting user</h3>
@@ -142,7 +186,15 @@ export default () => {
             Press ESC key or click the cancel button to cancel.
           </p>
           <div class="mt-6 flex justify-end gap-2">
-            <button class="btn">Confirm</button>
+            <button
+              onclick={() => {
+                onDeleteUser();
+                deleteUserDialogRef?.close();
+              }}
+              class="btn"
+            >
+              Confirm
+            </button>
             <button
               onclick={() => deleteUserDialogRef?.close()}
               class="btn btn-primary"
