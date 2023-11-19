@@ -17,7 +17,7 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       </span>
     </a>
     <div class="flex items-center">
-      <label class="btn btn-ghost drawer-button 2xl:hidden 2xl:invisible">
+      <label class="btn btn-ghost drawer-button 2xl:invisible 2xl:hidden">
         <input type="checkbox" class="drawer-toggle" />
         <span class="text-lg md:text-xl">
           <BsLayoutTextSidebar />
@@ -29,7 +29,29 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     <div class="drawer 2xl:drawer-open">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content lg:px-8">
-        main
+        <div class="flex flex-wrap items-center">
+          <div class="flex w-full justify-between">
+            <h2 class="mb-4 text-xl font-bold text-gray-800">Detection Stat</h2>
+            <div>
+              <form action="/statistics/date" method="get" id="date-form">
+                <div class="flex gap-4">
+                  <input
+                    type="date"
+                    name="dateFrom"
+                    id="date-from"
+                    class="input input-bordered transition-colors duration-75"
+                  />
+                  <input
+                    type="date"
+                    name="dateTo"
+                    id="date-to"
+                    class="input input-bordered"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="drawer-side">
         <label
@@ -64,7 +86,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     </div>
   </main>
   <script>
+    import { Chart } from "chart.js";
+
     let cctvId = new URLSearchParams(window.location.search).get("cctv");
+    let dateFrom: Date;
+    let dateTo: Date;
 
     if (cctvId === null) {
       cctvId = "1";
@@ -72,20 +98,24 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     }
 
     document.getElementById(`cctv-${cctvId}`)?.classList.add("active");
-    
-    document.querySelector<HTMLAnchorElement>("#return-link")!.href = `/cctv/room?name=${cctvId}`
 
-    document.querySelectorAll<HTMLButtonElement>(".cctv-button").forEach((element) => {
-      if (element.id == `cctv-${cctvId}`) {
-        return
-      }
+    document.querySelector<HTMLAnchorElement>(
+      "#return-link",
+    )!.href = `/cctv/room?name=${cctvId}`;
 
-      const targetCCTV = element.id.at(-1)
+    document
+      .querySelectorAll<HTMLButtonElement>(".cctv-button")
+      .forEach((element) => {
+        if (element.id == `cctv-${cctvId}`) {
+          return;
+        }
 
-      element.addEventListener("click", () => {
-        window.location.href = `${window.location.protocol}//${window.location.host}/statistics?cctv=${targetCCTV}`;
-      })
-    })
+        const targetCCTV = element.id.at(-1);
+
+        element.addEventListener("click", () => {
+          window.location.href = `${window.location.protocol}//${window.location.host}/statistics?cctv=${targetCCTV}`;
+        });
+      });
 
     document.querySelectorAll<HTMLInputElement>(".drawer-toggle").forEach((e) =>
       e.addEventListener("change", (event) => {
@@ -96,5 +126,58 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
           });
       }),
     );
+
+    const dateFromElement =
+      document.querySelector<HTMLInputElement>("#date-from");
+    const dateToElement = document.querySelector<HTMLInputElement>("#date-to");
+    const dateForm = document.querySelector<HTMLFormElement>("#date-form");
+
+    dateFromElement?.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      const newDate = new Date(target.value);
+      dateToElement?.classList.remove("input-error");
+
+      if (checkDate(newDate, dateTo)) {
+        dateFrom = newDate;
+        dateFromElement.classList.remove("input-error");
+
+        onDateFormChange();
+      } else {
+        dateFromElement.value = dateFrom
+          ? dateFrom.toISOString().split("T")[0]
+          : "";
+        dateFromElement.classList.add("input-error");
+      }
+    });
+
+    dateToElement?.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      const newDate = new Date(target.value);
+      dateFromElement?.classList.remove("input-error");
+
+      if (checkDate(dateFrom, newDate)) {
+        dateTo = newDate;
+        dateToElement.classList.remove("input-error");
+
+        onDateFormChange();
+      } else {
+        dateToElement.value = dateTo ? dateTo.toISOString().split("T")[0] : "";
+        dateToElement.classList.add("input-error");
+      }
+    });
+
+    function checkDate(from: Date, to: Date) {
+      if (from > to) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function onDateFormChange() {
+      if (dateFrom !== undefined && dateTo !== undefined) {
+        // dateForm?.submit();
+      }
+    }
   </script>
 </Layout>
