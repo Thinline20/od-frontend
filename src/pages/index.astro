@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 import mainCCTVImage from "~/assets/main-cctv.jpg";
 import mainVideoImage from "~/assets/main-video.jpg";
+import mainStatisticsImage from "~/assets/main-statistics.jpg";
 ---
 
 <Layout title="Home">
@@ -18,8 +19,16 @@ import mainVideoImage from "~/assets/main-video.jpg";
             transition:name="main-cctv-image"
           />
           <div class="flex w-full flex-col gap-2 text-left md:gap-4">
-            <h2 class="text-3xl font-bold tracking-wider md:text-5xl" transition:name="cctv-title">CCTV</h2>
-            <p class="text-sm md:w-96 md:text-base" transition:name="cctv-description">
+            <h2
+              class="text-3xl font-bold tracking-wider md:text-5xl"
+              transition:name="cctv-title"
+            >
+              CCTV
+            </h2>
+            <p
+              class="text-sm md:w-96 md:text-base"
+              transition:name="cctv-description"
+            >
               Get object detected footage from CCTV
             </p>
           </div>
@@ -45,6 +54,30 @@ import mainVideoImage from "~/assets/main-video.jpg";
         </div>
       </a>
       <div class="divider"></div>
+      <a href="/statistics" class="btn btn-ghost hero h-full">
+        <div class="hero-content flex-col md:flex-row md:gap-12">
+          <Image
+            src={mainStatisticsImage}
+            alt="Statistics Image"
+            class="aspect-video w-full rounded-lg shadow-md md:w-96"
+            transition:name="main-statistics-image"
+          />
+          <div class="flex w-full flex-col gap-2 text-left md:gap-4">
+            <h2
+              class="text-3xl font-bold tracking-wider md:text-5xl"
+              transition:name="statistics-title"
+            >
+              Statistics
+            </h2>
+            <p
+              class="text-sm md:w-96 md:text-base"
+              transition:name="statistics-description"
+            >
+              Get statictics data
+            </p>
+          </div>
+        </div>
+      </a>
     </div>
   </main>
 </Layout>
