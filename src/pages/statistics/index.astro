@@ -29,26 +29,17 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     <div class="drawer 2xl:drawer-open">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content lg:px-8">
-        <div class="flex flex-wrap items-center">
-          <div class="flex w-full justify-between">
-            <h2 class="mb-4 text-xl font-bold text-gray-800">Detection Stat</h2>
+        <div class="flex flex-wrap justify-start">
+          <div class="flex flex-col justify-between">
+            <h2 class="mb-4 text-xl font-bold text-gray-800">Weekly Stat</h2>
             <div>
-              <form action="/statistics/date" method="get" id="date-form">
-                <div class="flex gap-4">
-                  <input
-                    type="date"
-                    name="dateFrom"
-                    id="date-from"
-                    class="input input-bordered transition-colors duration-75"
-                  />
-                  <input
-                    type="date"
-                    name="dateTo"
-                    id="date-to"
-                    class="input input-bordered"
-                  />
-                </div>
-              </form>
+              <canvas id="weekly-stat"></canvas>
+            </div>
+          </div>
+          <div class="flex flex-col justify-start">
+            <h2 class="mb-4 text-xl font-bold text-gray-800">Monthly Stat</h2>
+            <div>
+              <canvas id="Monthly-stat"></canvas>
             </div>
           </div>
         </div>
@@ -86,7 +77,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     </div>
   </main>
   <script>
-    import { Chart } from "chart.js";
+    import { Chart, type ChartItem } from "chart.js";
+    import * as DateUtils from "~/utils/date";
+    import { fetchWithRange } from "~/data/statistics";
+
+    console.log(DateUtils.getWeekStart());
 
     let cctvId = new URLSearchParams(window.location.search).get("cctv");
     let dateFrom: Date;
@@ -127,57 +122,96 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       }),
     );
 
-    const dateFromElement =
-      document.querySelector<HTMLInputElement>("#date-from");
-    const dateToElement = document.querySelector<HTMLInputElement>("#date-to");
-    const dateForm = document.querySelector<HTMLFormElement>("#date-form");
+    // This function sets graphs
+    (async () => {
+      const monthStart = DateUtils.getMonthStart();
+      const monthEnd = DateUtils.getMonthEnd();
+      const weekStart = DateUtils.getWeekStart().getDate();
+      const weekEnd = DateUtils.getWeekEnd().getDate();
 
-    dateFromElement?.addEventListener("change", (event) => {
-      const target = event.target as HTMLInputElement;
-      const newDate = new Date(target.value);
-      dateToElement?.classList.remove("input-error");
+      // fetch data from database
+      const monthlyData = await fetchWithRange(cctvId!, monthStart, monthEnd);
 
-      if (checkDate(newDate, dateTo)) {
-        dateFrom = newDate;
-        dateFromElement.classList.remove("input-error");
+      // extract weekly data from monthly data
+      const weeklyData = monthlyData.filter((data) => {
+        return (
+          data.time.getDate() >= weekStart && data.time.getDate() <= weekEnd
+        );
+      });
 
-        onDateFormChange();
-      } else {
-        dateFromElement.value = dateFrom
-          ? dateFrom.toISOString().split("T")[0]
-          : "";
-        dateFromElement.classList.add("input-error");
-      }
+      console.log(monthlyData[0]);
+
+      const weeklyStat = new Chart(
+        document.querySelector("#weekly-stat") as ChartItem,
+        {
+          type: "line",
+          data: {
+            labels: weeklyData.map((data) => data.time.getDate()),
+            datasets: [
+              {
+                label: "People Count",
+                data: weeklyData.map((data) => data.count),
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        },
+      );
+    })().catch((err) => {
+      console.error(err);
     });
 
-    dateToElement?.addEventListener("change", (event) => {
-      const target = event.target as HTMLInputElement;
-      const newDate = new Date(target.value);
-      dateFromElement?.classList.remove("input-error");
-
-      if (checkDate(dateFrom, newDate)) {
-        dateTo = newDate;
-        dateToElement.classList.remove("input-error");
-
-        onDateFormChange();
-      } else {
-        dateToElement.value = dateTo ? dateTo.toISOString().split("T")[0] : "";
-        dateToElement.classList.add("input-error");
-      }
-    });
-
-    function checkDate(from: Date, to: Date) {
-      if (from > to) {
-        return false;
-      }
-
-      return true;
-    }
-
-    function onDateFormChange() {
-      if (dateFrom !== undefined && dateTo !== undefined) {
-        // dateForm?.submit();
-      }
-    }
+    // const dateFromElement =
+    //   document.querySelector<HTMLInputElement>("#date-from");
+    // const dateToElement = document.querySelector<HTMLInputElement>("#date-to");
+    // const dateForm = document.querySelector<HTMLFormElement>("#date-form");
+    // dateFromElement?.addEventListener("change", (event) => {
+    //   const target = event.target as HTMLInputElement;
+    //   const newDate = new Date(target.value);
+    //   dateToElement?.classList.remove("input-error");
+    //   if (checkDate(newDate, dateTo)) {
+    //     dateFrom = newDate;
+    //     dateFromElement.classList.remove("input-error");
+    //     onDateFormChange();
+    //   } else {
+    //     dateFromElement.value = dateFrom
+    //       ? dateFrom.toISOString().split("T")[0]
+    //       : "";
+    //     dateFromElement.classList.add("input-error");
+    //   }
+    // });
+    // dateToElement?.addEventListener("change", (event) => {
+    //   const target = event.target as HTMLInputElement;
+    //   const newDate = new Date(target.value);
+    //   dateFromElement?.classList.remove("input-error");
+    //   if (checkDate(dateFrom, newDate)) {
+    //     dateTo = newDate;
+    //     dateToElement.classList.remove("input-error");
+    //     onDateFormChange();
+    //   } else {
+    //     dateToElement.value = dateTo ? dateTo.toISOString().split("T")[0] : "";
+    //     dateToElement.classList.add("input-error");
+    //   }
+    // });
+    // function checkDate(from: Date, to: Date) {
+    //   if (from > to) {
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    // function onDateFormChange() {
+    //   if (dateFrom !== undefined && dateTo !== undefined) {
+    //     // dateForm?.submit();
+    //   }
+    // }
   </script>
 </Layout>
