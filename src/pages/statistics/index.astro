@@ -5,11 +5,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
 ---
 
 <Layout title="Statistics">
-  <div slot="header" class="flex gap-2 md:gap-4">
+  <div slot="header" class="flex gap-1">
     <a
       id="return-link"
       href=""
-      class="btn btn-ghost flex items-center gap-[6px] capitalize"
+      class="btn btn-ghost flex items-center capitalize"
     >
       <span class="text-lg md:text-xl">Return to CCTV</span>
       <span class="text-xl text-primary md:text-2xl">
@@ -25,26 +25,61 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       </label>
     </div>
   </div>
-  <main class="container mx-auto h-full p-6 2xl:px-0 2xl:py-8">
-    <div class="drawer 2xl:drawer-open">
+  <main class="h-full w-full px-6 pt-8 2xl:px-0 2xl:pt-8">
+    <div class="drawer h-full 2xl:drawer-open">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content lg:px-8">
-        <div class="flex flex-wrap justify-start">
-          <div class="flex flex-col justify-between">
-            <h2 class="mb-4 text-xl font-bold text-gray-800">Weekly Stat</h2>
-            <div>
-              <canvas id="weekly-stat"></canvas>
+        <div class="flex flex-col items-start gap-2">
+          <div class="grid w-full grid-cols-2 gap-4">
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-col">
+                <h2 class="text-xl font-bold text-gray-800">Weekly Traffic</h2>
+                <span class="week-dates text-sm text-gray-500">Loading...</span>
+              </div>
+              <div>
+                <canvas id="weekly-traffic"></canvas>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-col">
+                <h2 class="text-xl font-bold text-gray-800">
+                  Weekly Accidents
+                </h2>
+                <span class="week-dates text-sm text-gray-500">Loading...</span>
+              </div>
+              <div>
+                <canvas id="weekly-accidents"></canvas>
+              </div>
             </div>
           </div>
-          <div class="flex flex-col justify-start">
-            <h2 class="mb-4 text-xl font-bold text-gray-800">Monthly Stat</h2>
-            <div>
-              <canvas id="Monthly-stat"></canvas>
+          <div class="divider divider-vertical"></div>
+          <div class="grid w-full grid-cols-2 gap-4">
+            <div class="flex flex-col">
+              <div class="flex flex-col">
+                <h2 class="text-xl font-bold text-gray-800">Monthly Traffic</h2>
+                <span class="month-dates text-sm text-gray-500">Loading...</span
+                >
+              </div>
+              <div>
+                <canvas id="monthly-traffic"></canvas>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-col">
+                <h2 class="text-xl font-bold text-gray-800">
+                  Monthly Accidents
+                </h2>
+                <span class="month-dates text-sm text-gray-500">Loading...</span
+                >
+              </div>
+              <div>
+                <canvas id="monthly-accidents"></canvas>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side 2xl:h-full">
         <label
           for="drawer-toggle"
           aria-label="close sidebar"
@@ -77,7 +112,8 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     </div>
   </main>
   <script>
-    import { Chart, type ChartItem } from "chart.js";
+    import { Chart, type ChartItem, registerables } from "chart.js";
+    Chart.register(...registerables);
     import * as DateUtils from "~/utils/date";
     import { fetchWithRange } from "~/data/statistics";
 
@@ -86,6 +122,15 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     let cctvId = new URLSearchParams(window.location.search).get("cctv");
     let dateFrom: Date;
     let dateTo: Date;
+    let month: number;
+
+    document.querySelectorAll(".week-dates").forEach((element) => {
+      element.textContent = `${DateUtils.getWeekStart().toLocaleDateString()} - ${DateUtils.getWeekEnd().toLocaleDateString()}`;
+    });
+
+    document.querySelectorAll(".month-dates").forEach((element) => {
+      element.textContent = `${DateUtils.getMonthStart().toLocaleDateString()} - ${DateUtils.getMonthEnd().toLocaleDateString()}`;
+    });
 
     if (cctvId === null) {
       cctvId = "1";
@@ -122,37 +167,95 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       }),
     );
 
-    // This function sets graphs
-    (async () => {
-      const monthStart = DateUtils.getMonthStart();
-      const monthEnd = DateUtils.getMonthEnd();
-      const weekStart = DateUtils.getWeekStart().getDate();
-      const weekEnd = DateUtils.getWeekEnd().getDate();
+    setWeeklyChart().catch((error) => {
+      console.error(error);
+    });
+
+    setMonthlyChart(
+      DateUtils.getMonthStart().getFullYear(),
+      DateUtils.getMonthStart().getMonth(),
+    ).catch((error) => {
+      console.error(error);
+    });
+
+    async function setWeeklyChart() {
+      const weekStart = DateUtils.getWeekStart();
+      const weekEnd = DateUtils.getWeekEnd();
 
       // fetch data from database
-      const monthlyData = await fetchWithRange(cctvId!, monthStart, monthEnd);
+      const weeklyData = await fetchWithRange(
+        cctvId!,
+        weekStart,
+        weekEnd,
+        "log",
+      );
 
-      // extract weekly data from monthly data
-      const weeklyData = monthlyData.filter((data) => {
-        return (
-          data.time.getDate() >= weekStart && data.time.getDate() <= weekEnd
-        );
+      console.log(weeklyData);
+
+      const processedWeeklyData = Array.from({ length: 7 }, (_, i) => {
+        return {
+          car: 0,
+          truck: 0,
+          bus: 0,
+          person: 0,
+          bike: 0,
+        };
       });
 
-      console.log(monthlyData[0]);
+      console.log(processedWeeklyData);
 
-      const weeklyStat = new Chart(
-        document.querySelector("#weekly-stat") as ChartItem,
+      weeklyData.forEach((data) => {
+        const day = data.time.getDay();
+
+        processedWeeklyData[day].car += data.log.car ?? 0;
+        processedWeeklyData[day].truck += data.log.truck ?? 0;
+        processedWeeklyData[day].bus += data.log.bus ?? 0;
+        processedWeeklyData[day].person += data.log.person ?? 0;
+        processedWeeklyData[day].bike += data.log.bike ?? 0;
+      });
+
+      console.log(processedWeeklyData);
+
+      const weeklyTrafficChart = new Chart(
+        document.querySelector("#weekly-traffic") as ChartItem,
         {
           type: "line",
           data: {
-            labels: weeklyData.map((data) => data.time.getDate()),
+            labels: processedWeeklyData.map((_, index) => index + 1),
             datasets: [
               {
-                label: "People Count",
-                data: weeklyData.map((data) => data.count),
+                label: "Car Count",
+                data: processedWeeklyData.map((data) => data.car),
                 fill: false,
                 borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+              {
+                label: "Truck Count",
+                data: processedWeeklyData.map((data) => data.truck),
+                fill: false,
+                borderColor: "rgb(255, 99, 132)",
+                tension: 0.1,
+              },
+              {
+                label: "Bus Count",
+                data: processedWeeklyData.map((data) => data.bus),
+                fill: false,
+                borderColor: "rgb(54, 162, 235)",
+                tension: 0.1,
+              },
+              {
+                label: "Person Count",
+                data: processedWeeklyData.map((data) => data.person),
+                fill: false,
+                borderColor: "rgb(255, 205, 86)",
+                tension: 0.1,
+              },
+              {
+                label: "Bike Count",
+                data: processedWeeklyData.map((data) => data.bike),
+                fill: false,
+                borderColor: "rgb(153, 102, 255)",
                 tension: 0.1,
               },
             ],
@@ -161,14 +264,215 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
             scales: {
               y: {
                 beginAtZero: true,
+                suggestedMin: 10,
               },
             },
           },
         },
       );
-    })().catch((err) => {
-      console.error(err);
-    });
+
+      const weeklyAccidents = await fetchWithRange(
+        cctvId!,
+        weekStart,
+        weekEnd,
+        "accident",
+      );
+
+      const processedWeeklyAccidents = Array.from({ length: 7 }, (_, i) => {
+        return {
+          moderate: 0,
+          accidents: 0,
+        };
+      });
+
+      weeklyAccidents.forEach((data) => {
+        const date = data.time.getDate();
+        processedWeeklyAccidents[date - 1].moderate += data.log.moderate ?? 0;
+        processedWeeklyAccidents[date - 1].accidents += data.log.severe ?? 0;
+      });
+
+      const weeklyAccidentsChart = new Chart(
+        document.querySelector("#weekly-accidents") as ChartItem,
+        {
+          type: "line",
+          data: {
+            labels: processedWeeklyAccidents.map((_, index) => index + 1),
+            datasets: [
+              {
+                label: "Moderate Accidents",
+                data: processedWeeklyAccidents.map((data) => data.moderate),
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+              {
+                label: "Severe Accidents",
+                data: processedWeeklyAccidents.map((data) => data.accidents),
+                fill: false,
+                borderColor: "rgb(255, 99, 132)",
+                tension: 0.1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                suggestedMin: 10,
+              },
+            },
+          },
+        },
+      );
+    }
+
+    // This function sets graphs
+    async function setMonthlyChart(year: number, month: number) {
+      const monthStart = new Date(year, month, 1);
+      const monthEnd = new Date(year, month + 1, 0);
+
+      // fetch data from database
+      const monthlyData = await fetchWithRange(
+        cctvId!,
+        monthStart,
+        monthEnd,
+        "log",
+      );
+
+      const processedMonthlyData = Array.from(
+        { length: monthEnd.getDate() },
+        (_, i) => {
+          return {
+            car: 0,
+            truck: 0,
+            bus: 0,
+            person: 0,
+            bike: 0,
+          };
+        },
+      );
+
+      monthlyData.forEach((data) => {
+        const date = data.time.getDate();
+        processedMonthlyData[date - 1].car += data.log.car ?? 0;
+        processedMonthlyData[date - 1].truck += data.log.truck ?? 0;
+        processedMonthlyData[date - 1].bus += data.log.bus ?? 0;
+        processedMonthlyData[date - 1].person += data.log.person ?? 0;
+        processedMonthlyData[date - 1].bike += data.log.bike ?? 0;
+      });
+
+      const monthlyTraffic = new Chart(
+        document.querySelector("#monthly-traffic") as ChartItem,
+        {
+          type: "line",
+          data: {
+            labels: processedMonthlyData.map((_, index) => index + 1),
+            datasets: [
+              {
+                label: "Car Count",
+                data: processedMonthlyData.map((data) => data.car),
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+              {
+                label: "Truck Count",
+                data: processedMonthlyData.map((data) => data.truck),
+                fill: false,
+                borderColor: "rgb(255, 99, 132)",
+                tension: 0.1,
+              },
+              {
+                label: "Bus Count",
+                data: processedMonthlyData.map((data) => data.bus),
+                fill: false,
+                borderColor: "rgb(54, 162, 235)",
+                tension: 0.1,
+              },
+              {
+                label: "Person Count",
+                data: processedMonthlyData.map((data) => data.person),
+                fill: false,
+                borderColor: "rgb(255, 205, 86)",
+                tension: 0.1,
+              },
+              {
+                label: "Bike Count",
+                data: processedMonthlyData.map((data) => data.bike),
+                fill: false,
+                borderColor: "rgb(153, 102, 255)",
+                tension: 0.1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                suggestedMin: 10,
+              },
+            },
+          },
+        },
+      );
+
+      const monthlyAccidents = await fetchWithRange(
+        cctvId!,
+        monthStart,
+        monthEnd,
+        "accident",
+      );
+
+      const processedMonthlyAccidents = Array.from(
+        { length: monthEnd.getDate() },
+        (_, i) => {
+          return {
+            moderate: 0,
+            accidents: 0,
+          };
+        },
+      );
+
+      monthlyAccidents.forEach((data) => {
+        const date = data.time.getDate();
+        processedMonthlyAccidents[date - 1].moderate += data.log.moderate ?? 0;
+        processedMonthlyAccidents[date - 1].accidents += data.log.severe ?? 0;
+      });
+
+      const monthlyAccidentsChart = new Chart(
+        document.querySelector("#monthly-accidents") as ChartItem,
+        {
+          type: "line",
+          data: {
+            labels: processedMonthlyAccidents.map((_, index) => index + 1),
+            datasets: [
+              {
+                label: "Moderate Accidents",
+                data: processedMonthlyAccidents.map((data) => data.moderate),
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+              {
+                label: "Severe Accidents",
+                data: processedMonthlyAccidents.map((data) => data.accidents),
+                fill: false,
+                borderColor: "rgb(255, 99, 132)",
+                tension: 0.1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                suggestedMin: 10,
+              },
+            },
+          },
+        },
+      );
+    }
 
     // const dateFromElement =
     //   document.querySelector<HTMLInputElement>("#date-from");

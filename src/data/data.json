@@ -1,0 +1,2865 @@
+[
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2601,
+    "fields": {
+      "log": "{\"person\": 2}",
+      "time": "2023-11-03T15:18:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2602,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-03T16:07:47",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2603,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-03T16:08:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2604,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-03T16:17:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2605,
+    "fields": {
+      "log": "{\"car\": 2, \"truck\": 1}",
+      "time": "2023-11-05T17:38:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2606,
+    "fields": {
+      "log": "{\"bus\": 1}",
+      "time": "2023-11-05T17:38:27",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2607,
+    "fields": {
+      "log": "{\"bus\": 1}",
+      "time": "2023-11-05T17:38:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2608,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-05T17:38:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2609,
+    "fields": {
+      "log": "{\"car\": 2, \"truck\": 1}",
+      "time": "2023-11-05T17:40:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2610,
+    "fields": {
+      "log": "{\"bus\": 2}",
+      "time": "2023-11-05T17:40:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2611,
+    "fields": { "log": "{}", "time": "2023-11-05T17:41:01", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2612,
+    "fields": {
+      "log": "{\"car\": 2, \"truck\": 1}",
+      "time": "2023-11-05T17:41:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2613,
+    "fields": {
+      "log": "{\"bus\": 3, \"car\": 3}",
+      "time": "2023-11-05T17:42:20",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2614,
+    "fields": {
+      "log": "{\"car\": 29, \"bus\": 2, \"truck\": 4}",
+      "time": "2023-11-05T17:43:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2624,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-05T19:15:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2625,
+    "fields": {
+      "log": "{\"car\": 5}",
+      "time": "2023-11-05T19:15:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2626,
+    "fields": { "log": "{}", "time": "2023-11-05T19:15:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2627,
+    "fields": { "log": "{}", "time": "2023-11-05T19:15:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2628,
+    "fields": {
+      "log": "{\"bus\": 1, \"car\": 1}",
+      "time": "2023-11-05T19:15:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2629,
+    "fields": {
+      "log": "{\"car\": 2, \"train\": 1}",
+      "time": "2023-11-05T19:15:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2630,
+    "fields": {
+      "log": "{\"car\": 4}",
+      "time": "2023-11-05T19:15:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2631,
+    "fields": { "log": "{}", "time": "2023-11-05T19:15:47", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2632,
+    "fields": {
+      "log": "{\"car\": 7}",
+      "time": "2023-11-05T19:15:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2633,
+    "fields": {
+      "log": "{\"car\": 20, \"bus\": 3, \"truck\": 1}",
+      "time": "2023-11-05T19:15:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2634,
+    "fields": {
+      "log": "{\"car\": 24, \"bus\": 1}",
+      "time": "2023-11-05T19:15:57",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2635,
+    "fields": {
+      "log": "{\"car\": 29, \"bus\": 1}",
+      "time": "2023-11-05T19:15:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2636,
+    "fields": {
+      "log": "{\"car\": 6}",
+      "time": "2023-11-05T19:16:02",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2637,
+    "fields": {
+      "log": "{\"car\": 20, \"bus\": 1, \"truck\": 1}",
+      "time": "2023-11-05T19:16:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2638,
+    "fields": {
+      "log": "{\"car\": 18, \"truck\": 1}",
+      "time": "2023-11-05T19:16:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2639,
+    "fields": {
+      "log": "{\"car\": 14, \"truck\": 1}",
+      "time": "2023-11-05T19:16:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2640,
+    "fields": {
+      "log": "{\"car\": 11}",
+      "time": "2023-11-05T19:16:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2641,
+    "fields": {
+      "log": "{\"car\": 12}",
+      "time": "2023-11-05T19:16:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2644,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 9, \"cell phone\": 1, \"chair\": 1}",
+      "time": "2023-11-06T21:05:54",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2645,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 9}",
+      "time": "2023-11-06T21:06:04",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2646,
+    "fields": {
+      "log": "{\"car\": 9, \"person\": 1}",
+      "time": "2023-11-06T21:21:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2647,
+    "fields": {
+      "log": "{\"laptop\": 1}",
+      "time": "2023-11-06T21:21:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2648,
+    "fields": { "log": "{}", "time": "2023-11-06T21:22:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2649,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-06T21:22:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2650,
+    "fields": {
+      "log": "{\"car\": 9}",
+      "time": "2023-11-06T21:24:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2651,
+    "fields": {
+      "log": "{\"laptop\": 1, \"tv\": 1}",
+      "time": "2023-11-06T21:24:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2652,
+    "fields": { "log": "{}", "time": "2023-11-06T21:24:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2653,
+    "fields": {
+      "log": "{\"car\": 2, \"traffic light\": 1, \"bus\": 2, \"person\": 1, \"truck\": 2}",
+      "time": "2023-11-06T21:25:06",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2654,
+    "fields": {
+      "log": "{\"person\": 2, \"book\": 11}",
+      "time": "2023-11-06T21:49:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2655,
+    "fields": {
+      "log": "{\"person\": 1, \"laptop\": 1}",
+      "time": "2023-11-06T21:51:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2656,
+    "fields": {
+      "log": "{\"person\": 2, \"book\": 10, \"chair\": 1, \"laptop\": 1}",
+      "time": "2023-11-06T21:58:17",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2657,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 11, \"chair\": 1, \"laptop\": 1}",
+      "time": "2023-11-06T21:59:01",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2658,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T17:14:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2659,
+    "fields": { "log": "{}", "time": "2023-11-07T17:14:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2660,
+    "fields": {
+      "log": "{\"car\": 2}",
+      "time": "2023-11-07T17:14:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2661,
+    "fields": {
+      "log": "{\"motorcycle\": 3, \"person\": 3, \"car\": 1}",
+      "time": "2023-11-07T17:14:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2662,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T17:14:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2663,
+    "fields": {
+      "log": "{\"person\": 2, \"snowboard\": 2}",
+      "time": "2023-11-07T17:14:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2664,
+    "fields": {
+      "log": "{\"car\": 1, \"person\": 1}",
+      "time": "2023-11-07T17:18:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2665,
+    "fields": {
+      "log": "{\"book\": 8, \"person\": 2}",
+      "time": "2023-11-07T17:45:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2666,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-07T17:45:24",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2667,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T17:45:35",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2668,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T17:45:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2669,
+    "fields": {
+      "log": "{\"person\": 2, \"book\": 8}",
+      "time": "2023-11-07T18:18:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2670,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6, \"tie\": 1, \"laptop\": 1}",
+      "time": "2023-11-07T18:18:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2671,
+    "fields": {
+      "log": "{\"person\": 1, \"laptop\": 1, \"book\": 6}",
+      "time": "2023-11-07T18:18:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2672,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7, \"laptop\": 1}",
+      "time": "2023-11-07T18:18:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2673,
+    "fields": {
+      "log": "{\"person\": 1, \"tie\": 1}",
+      "time": "2023-11-07T18:18:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2674,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7, \"laptop\": 1}",
+      "time": "2023-11-07T18:18:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2675,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T18:18:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2676,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6, \"laptop\": 1}",
+      "time": "2023-11-07T18:18:52",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2677,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T18:18:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2678,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-07T18:18:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2679,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8, \"laptop\": 1}",
+      "time": "2023-11-07T18:19:02",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2680,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T18:19:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2681,
+    "fields": {
+      "log": "{\"person\": 1, \"tie\": 1}",
+      "time": "2023-11-07T18:19:31",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2682,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T18:19:35",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2683,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-07T18:27:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2684,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8}",
+      "time": "2023-11-07T18:27:11",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2685,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T18:28:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2686,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 9, \"laptop\": 1}",
+      "time": "2023-11-07T19:05:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2687,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8}",
+      "time": "2023-11-07T19:05:49",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2688,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:15:44",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2689,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-07T19:21:44",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2690,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T19:21:47",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2691,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-07T19:21:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2692,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:21:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2693,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:21:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2694,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T19:22:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2695,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:03",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2696,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:06",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2697,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:09",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2698,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8}",
+      "time": "2023-11-07T19:22:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2699,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T19:22:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2700,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2701,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2702,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:24",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2703,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 9}",
+      "time": "2023-11-07T19:22:27",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2704,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8}",
+      "time": "2023-11-07T19:22:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2705,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2706,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2707,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 8}",
+      "time": "2023-11-07T19:22:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2708,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:22:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2709,
+    "fields": {
+      "log": "{\"car\": 22, \"bus\": 1}",
+      "time": "2023-11-07T19:23:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2710,
+    "fields": {
+      "log": "{\"car\": 26, \"bus\": 1, \"truck\": 2}",
+      "time": "2023-11-07T19:23:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2711,
+    "fields": {
+      "log": "{\"car\": 13, \"truck\": 1, \"bus\": 1}",
+      "time": "2023-11-07T19:23:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2712,
+    "fields": {
+      "log": "{\"car\": 17, \"bus\": 2, \"truck\": 1}",
+      "time": "2023-11-07T19:23:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2713,
+    "fields": {
+      "log": "{\"car\": 15, \"bus\": 1, \"truck\": 1}",
+      "time": "2023-11-07T19:23:57",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2714,
+    "fields": {
+      "log": "{\"car\": 18, \"bus\": 3, \"truck\": 1}",
+      "time": "2023-11-07T19:24:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2715,
+    "fields": {
+      "log": "{\"person\": 2, \"car\": 10}",
+      "time": "2023-11-07T19:24:03",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2716,
+    "fields": {
+      "log": "{\"car\": 4, \"truck\": 1}",
+      "time": "2023-11-07T19:24:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2717,
+    "fields": {
+      "log": "{\"car\": 9}",
+      "time": "2023-11-07T19:24:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2718,
+    "fields": {
+      "log": "{\"car\": 8}",
+      "time": "2023-11-07T19:24:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2719,
+    "fields": {
+      "log": "{\"car\": 4, \"clock\": 1}",
+      "time": "2023-11-07T19:24:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2720,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:19", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2721,
+    "fields": {
+      "log": "{\"car\": 8}",
+      "time": "2023-11-07T19:24:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2722,
+    "fields": {
+      "log": "{\"car\": 9}",
+      "time": "2023-11-07T19:24:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2723,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-07T19:24:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2724,
+    "fields": {
+      "log": "{\"car\": 6, \"tv\": 1}",
+      "time": "2023-11-07T19:24:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2725,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-07T19:24:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2726,
+    "fields": { "log": "{}", "time": "2023-11-07T19:35:04", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2727,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7}",
+      "time": "2023-11-07T19:35:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2728,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-07T19:35:55",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2729,
+    "fields": {
+      "log": "{\"person\": 2, \"book\": 7}",
+      "time": "2023-11-07T20:16:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2730,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 7, \"cell phone\": 1, \"chair\": 1}",
+      "time": "2023-11-07T20:16:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2731,
+    "fields": {
+      "log": "{\"bus\": 1, \"car\": 12, \"person\": 1, \"traffic light\": 1, \"truck\": 1}",
+      "time": "2023-11-07T20:17:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2732,
+    "fields": {
+      "log": "{\"car\": 11, \"bus\": 1, \"person\": 1, \"traffic light\": 1}",
+      "time": "2023-11-07T20:17:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2733,
+    "fields": {
+      "log": "{\"car\": 7, \"truck\": 2}",
+      "time": "2023-11-07T20:17:24",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2734,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-07T20:17:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2735,
+    "fields": {
+      "log": "{\"car\": 7, \"truck\": 2}",
+      "time": "2023-11-07T20:17:31",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2736,
+    "fields": {
+      "log": "{\"car\": 5, \"truck\": 1, \"bus\": 1}",
+      "time": "2023-11-07T20:17:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2737,
+    "fields": {
+      "log": "{\"car\": 6, \"bus\": 2, \"truck\": 2}",
+      "time": "2023-11-07T20:17:37",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2738,
+    "fields": {
+      "log": "{\"car\": 6, \"bus\": 1}",
+      "time": "2023-11-07T20:17:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2739,
+    "fields": {
+      "log": "{\"car\": 11, \"bus\": 1}",
+      "time": "2023-11-07T20:17:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2740,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2741,
+    "fields": {
+      "log": "{\"car\": 2}",
+      "time": "2023-11-07T20:17:49",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2742,
+    "fields": {
+      "log": "{\"toothbrush\": 1}",
+      "time": "2023-11-07T20:17:52",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2743,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2744,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-07T20:20:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2745,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-07T20:20:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2746,
+    "fields": {
+      "log": "{\"tv\": 1, \"cup\": 1}",
+      "time": "2023-11-07T20:20:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2747,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-07T20:20:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2748,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-07T20:20:31",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2749,
+    "fields": { "log": "{}", "time": "2023-11-07T20:39:02", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2750,
+    "fields": {
+      "log": "{\"car\": 2}",
+      "time": "2023-11-07T20:39:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2751,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-07T20:39:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2752,
+    "fields": { "log": "{}", "time": "2023-11-07T20:39:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2753,
+    "fields": {
+      "log": "{\"car\": 17, \"truck\": 2, \"bus\": 1}",
+      "time": "2023-11-07T20:39:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2754,
+    "fields": { "log": "{}", "time": "2023-11-07T20:39:19", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2755,
+    "fields": {
+      "log": "{\"tv\": 1, \"baseball bat\": 1, \"cup\": 1, \"clock\": 1}",
+      "time": "2023-11-07T20:39:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2756,
+    "fields": {
+      "log": "{\"baseball bat\": 1, \"clock\": 1, \"tv\": 1, \"cup\": 1}",
+      "time": "2023-11-07T20:39:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2757,
+    "fields": {
+      "log": "{\"baseball bat\": 1, \"tv\": 1, \"cup\": 1, \"clock\": 1}",
+      "time": "2023-11-07T20:39:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2758,
+    "fields": {
+      "log": "{\"tv\": 1, \"cell phone\": 1, \"baseball bat\": 1}",
+      "time": "2023-11-07T20:43:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2759,
+    "fields": {
+      "log": "{\"tv\": 1, \"clock\": 1}",
+      "time": "2023-11-07T20:43:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2760,
+    "fields": {
+      "log": "{\"tv\": 1, \"cell phone\": 1, \"baseball bat\": 1, \"cup\": 1}",
+      "time": "2023-11-07T20:43:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2761,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2762,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:30", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2763,
+    "fields": {
+      "log": "{\"potted plant\": 1, \"baseball bat\": 1}",
+      "time": "2023-11-07T20:43:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2764,
+    "fields": {
+      "log": "{\"cell phone\": 1}",
+      "time": "2023-11-07T20:43:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2765,
+    "fields": {
+      "log": "{\"cell phone\": 1}",
+      "time": "2023-11-07T20:43:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2766,
+    "fields": {
+      "log": "{\"cell phone\": 1}",
+      "time": "2023-11-07T20:43:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2767,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2768,
+    "fields": {
+      "log": "{\"car\": 9, \"person\": 1, \"truck\": 1, \"bus\": 1}",
+      "time": "2023-11-07T20:43:57",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2769,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2770,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-07T20:44:03",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2771,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:06", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2772,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:09", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2773,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-07T20:44:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2774,
+    "fields": {
+      "log": "{\"car\": 7, \"truck\": 1}",
+      "time": "2023-11-07T20:44:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2775,
+    "fields": {
+      "log": "{\"car\": 1, \"traffic light\": 1}",
+      "time": "2023-11-07T20:44:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2776,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:08", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2777,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2778,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2779,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:15", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2780,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:17", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2781,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:20", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2782,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2783,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2784,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2785,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2786,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2787,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2788,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 4}",
+      "time": "2023-11-08T22:16:09",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2789,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 4}",
+      "time": "2023-11-08T22:16:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2790,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-08T22:16:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2791,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-08T22:16:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2792,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-08T22:16:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2793,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 6}",
+      "time": "2023-11-08T22:16:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2794,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 5, \"remote\": 1, \"cell phone\": 1}",
+      "time": "2023-11-08T22:32:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2795,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 3}",
+      "time": "2023-11-08T22:32:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2796,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 4, \"cell phone\": 1}",
+      "time": "2023-11-08T22:32:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2797,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 5}",
+      "time": "2023-11-08T22:32:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2798,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-08T22:32:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2799,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 4, \"laptop\": 1}",
+      "time": "2023-11-08T22:32:37",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2800,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 4, \"cell phone\": 1}",
+      "time": "2023-11-08T22:32:41",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2801,
+    "fields": {
+      "log": "{\"person\": 1, \"cell phone\": 1, \"book\": 5, \"laptop\": 1}",
+      "time": "2023-11-08T22:32:44",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2802,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 5, \"laptop\": 1}",
+      "time": "2023-11-08T22:32:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2803,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-08T22:32:52",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2804,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 5}",
+      "time": "2023-11-08T22:32:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2805,
+    "fields": {
+      "log": "{\"person\": 1, \"book\": 5}",
+      "time": "2023-11-08T22:32:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2806,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-08T22:33:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2807,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2808,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2809,
+    "fields": {
+      "log": "{\"car\": 1}",
+      "time": "2023-11-08T22:42:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2810,
+    "fields": {
+      "log": "{\"car\": 5}",
+      "time": "2023-11-08T22:42:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2811,
+    "fields": {
+      "log": "{\"tv\": 1}",
+      "time": "2023-11-08T22:42:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2812,
+    "fields": {
+      "log": "{\"cup\": 1, \"cell phone\": 1}",
+      "time": "2023-11-08T22:42:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2813,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2814,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2815,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2816,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2817,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2818,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:43:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2819,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:35", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2820,
+    "fields": {
+      "log": "{\"car\": 12}",
+      "time": "2023-11-16T19:43:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2821,
+    "fields": {
+      "log": "{\"car\": 9, \"umbrella\": 1, \"truck\": 1, \"clock\": 1}",
+      "time": "2023-11-16T19:43:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2822,
+    "fields": {
+      "log": "{\"car\": 10, \"truck\": 1, \"traffic light\": 1, \"umbrella\": 1, \"clock\": 1}",
+      "time": "2023-11-16T19:43:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2823,
+    "fields": {
+      "log": "{\"car\": 3}",
+      "time": "2023-11-16T19:43:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2824,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:52", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2825,
+    "fields": {
+      "log": "{\"car\": 2}",
+      "time": "2023-11-16T19:43:55",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2826,
+    "fields": {
+      "log": "{\"car\": 3}",
+      "time": "2023-11-16T19:43:58",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2827,
+    "fields": {
+      "log": "{\"car\": 8, \"person\": 1}",
+      "time": "2023-11-16T19:44:01",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2828,
+    "fields": {
+      "log": "{\"toothbrush\": 1}",
+      "time": "2023-11-16T19:44:04",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2829,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:44:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2830,
+    "fields": { "log": "{}", "time": "2023-11-16T19:44:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2831,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T19:44:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2832,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T19:44:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2833,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T19:44:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2834,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T19:44:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2835,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T19:46:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2836,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T19:46:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2837,
+    "fields": {
+      "log": "{\"person\": 1, \"tv\": 1}",
+      "time": "2023-11-16T20:19:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2838,
+    "fields": {
+      "log": "{\"book\": 1, \"laptop\": 1}",
+      "time": "2023-11-16T20:19:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2839,
+    "fields": { "log": "{}", "time": "2023-11-16T20:19:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2840,
+    "fields": {
+      "log": "{\"book\": 1, \"laptop\": 1}",
+      "time": "2023-11-16T20:20:03",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2841,
+    "fields": {
+      "log": "{\"cell phone\": 1}",
+      "time": "2023-11-16T20:20:06",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2842,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:09", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2843,
+    "fields": {
+      "log": "{\"car\": 9, \"tv\": 1}",
+      "time": "2023-11-16T20:20:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2844,
+    "fields": {
+      "log": "{\"car\": 13, \"umbrella\": 1, \"clock\": 1}",
+      "time": "2023-11-16T20:20:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2845,
+    "fields": {
+      "log": "{\"car\": 4}",
+      "time": "2023-11-16T20:20:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2846,
+    "fields": {
+      "log": "{\"car\": 4}",
+      "time": "2023-11-16T20:20:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2847,
+    "fields": {
+      "log": "{\"car\": 4}",
+      "time": "2023-11-16T20:20:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2848,
+    "fields": {
+      "log": "{\"car\": 3}",
+      "time": "2023-11-16T20:20:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2849,
+    "fields": {
+      "log": "{\"car\": 10, \"tv\": 1, \"truck\": 1}",
+      "time": "2023-11-16T20:20:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2850,
+    "fields": {
+      "log": "{\"car\": 8, \"truck\": 1}",
+      "time": "2023-11-16T20:20:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2851,
+    "fields": {
+      "log": "{\"tv\": 1, \"toothbrush\": 1}",
+      "time": "2023-11-16T20:20:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2852,
+    "fields": {
+      "log": "{\"person\": 1, \"tv\": 1, \"clock\": 1}",
+      "time": "2023-11-16T20:20:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2853,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T20:20:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2854,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:20:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2855,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T20:20:51",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2856,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:22:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2857,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:22:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2858,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:22:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2859,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:22:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2860,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-16T20:32:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2861,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2862,
+    "fields": {
+      "log": "{\"laptop\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:32:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2863,
+    "fields": {
+      "log": "{\"car\": 8, \"umbrella\": 1}",
+      "time": "2023-11-16T20:32:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2864,
+    "fields": {
+      "log": "{\"book\": 1}",
+      "time": "2023-11-16T20:32:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2865,
+    "fields": {
+      "log": "{\"car\": 2}",
+      "time": "2023-11-16T20:32:47",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2866,
+    "fields": {
+      "log": "{\"car\": 9, \"truck\": 2}",
+      "time": "2023-11-16T20:32:51",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2867,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:54", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2868,
+    "fields": {
+      "log": "{\"person\": 1, \"cat\": 1}",
+      "time": "2023-11-16T20:32:57",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2869,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2870,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2871,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:05", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2872,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:08", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2873,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:11", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2874,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2875,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2876,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2877,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:14", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2878,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:17", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2879,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:20", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2880,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2881,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2882,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2883,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2884,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:42", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2885,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2886,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:11", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2887,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:14", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2888,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2889,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2890,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:21", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2891,
+    "fields": { "log": "{}", "time": "2023-11-16T21:08:41", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2892,
+    "fields": { "log": "{}", "time": "2023-11-19T21:21:31", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2893,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:27", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2894,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2895,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2896,
+    "fields": {
+      "log": "{\"laptop\": 1}",
+      "time": "2023-11-20T15:09:47",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2897,
+    "fields": {
+      "log": "{\"tv\": 1, \"mouse\": 1}",
+      "time": "2023-11-20T15:09:54",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2898,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2899,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2900,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2901,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:35",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2902,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2903,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:41",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2904,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2905,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:49",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2906,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:52",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2907,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2908,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:10:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2909,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:11:02",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2910,
+    "fields": {
+      "log": "{\"person\": 1, \"stop sign\": 1}",
+      "time": "2023-11-20T15:11:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2911,
+    "fields": {
+      "log": "{\"remote\": 1}",
+      "time": "2023-11-20T15:11:44",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2912,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2913,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2914,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2915,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2916,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2917,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2918,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2919,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2920,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2921,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:20:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2922,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:21:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2923,
+    "fields": {
+      "log": "{\"laptop\": 1}",
+      "time": "2023-11-20T15:21:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2924,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2925,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:15", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2926,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2927,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:29", "location": "서울" }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2928,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:30:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2929,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:30:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2930,
+    "fields": {
+      "log": "{\"person\": 1, \"stop sign\": 1}",
+      "time": "2023-11-20T15:30:27",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2931,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:35:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2932,
+    "fields": {
+      "log": "{\"person\": 1, \"stop sign\": 1}",
+      "time": "2023-11-20T15:35:54",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2933,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:35:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2934,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:36:04",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2935,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T15:36:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2936,
+    "fields": {
+      "log": "{\"person\": 1, \"stop sign\": 1}",
+      "time": "2023-11-20T17:30:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2937,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:30:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2938,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:30:51",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2939,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2940,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:37",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2941,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2942,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2943,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2944,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:49",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2945,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2946,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2947,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:45:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2948,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T17:46:04",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2949,
+    "fields": {
+      "log": "{\"book\": 5, \"tv\": 1}",
+      "time": "2023-11-20T17:46:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2950,
+    "fields": {
+      "log": "{\"book\": 4, \"tv\": 2}",
+      "time": "2023-11-20T17:46:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2951,
+    "fields": {
+      "log": "{\"book\": 3, \"sink\": 1}",
+      "time": "2023-11-20T17:46:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2952,
+    "fields": {
+      "log": "{\"book\": 5, \"tv\": 1}",
+      "time": "2023-11-20T17:47:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2953,
+    "fields": {
+      "log": "{\"book\": 4, \"tv\": 1}",
+      "time": "2023-11-20T17:47:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2954,
+    "fields": {
+      "log": "{\"book\": 2}",
+      "time": "2023-11-20T17:47:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2955,
+    "fields": {
+      "log": "{\"book\": 2}",
+      "time": "2023-11-20T17:47:20",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2956,
+    "fields": {
+      "log": "{\"book\": 2}",
+      "time": "2023-11-20T17:47:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2957,
+    "fields": {
+      "log": "{\"book\": 2}",
+      "time": "2023-11-20T17:47:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2958,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T18:04:37",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2959,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T18:04:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2960,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T18:04:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2961,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T18:04:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.objectdetection",
+    "pk": 2962,
+    "fields": {
+      "log": "{\"person\": 1}",
+      "time": "2023-11-20T18:04:49",
+      "location": "서울"
+    }
+  }
+]

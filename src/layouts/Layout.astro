@@ -1,12 +1,21 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { Icon } from "astro-icon";
+import ClarityAdministratorSolid from "~/components/icons/ClarityAdministratorSolid";
+import RiLogoutBoxRFill from "~/components/icons/RiLogoutBoxRFill";
 interface Props {
   title: string;
   useTransition?: boolean;
+  loggedIn?: boolean;
+  isAdmin?: boolean;
 }
 
-const { title, useTransition = true } = Astro.props;
+const {
+  title,
+  useTransition = true,
+  loggedIn = true,
+  isAdmin = true,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -41,7 +50,7 @@ const { title, useTransition = true } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div id="app" class="flex h-screen max-w-screen flex-col">
+    <div id="app" class="max-w-screen flex h-screen flex-col">
       <header class="flex-0 container navbar mx-auto 1080p:max-w-screen-2xl">
         <nav class="flex-1">
           <a href="/" class="btn btn-ghost gap-0 text-lg md:text-2xl"
@@ -49,13 +58,31 @@ const { title, useTransition = true } = Astro.props;
           >
         </nav>
         <nav class="flex-none">
-          <div class="flex items-center justify-center gap-4">
+          <nav class="flex items-center justify-center gap-1">
             <slot name="header" />
+            {
+              isAdmin && (
+                <a href="/accounts/manage" class="btn btn-ghost text-lg">
+                  <span class="text-xl text-primary">
+                    <ClarityAdministratorSolid />
+                  </span>
+                </a>
+              )
+            }
+            {
+              loggedIn && (
+                <a href="/accounts/logout" class="btn btn-ghost text-lg">
+                  <span class="text-xl text-primary">
+                    <RiLogoutBoxRFill />
+                  </span>
+                </a>
+              )
+            }
             <!-- <select name="theme" id="theme" class="select" transition:persist>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select> -->
-          </div>
+          </nav>
         </nav>
       </header>
       <div class="flex-1">

@@ -1,0 +1,1959 @@
+[
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 1,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-06T21:21:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 2,
+    "fields": { "log": "{}", "time": "2023-11-06T21:21:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 3,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-06T21:22:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 4,
+    "fields": { "log": "{}", "time": "2023-11-06T21:22:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 5,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-06T21:24:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 6,
+    "fields": { "log": "{}", "time": "2023-11-06T21:24:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 7,
+    "fields": { "log": "{}", "time": "2023-11-06T21:24:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 8,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-06T21:25:06",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 9,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-06T21:49:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 10,
+    "fields": { "log": "{}", "time": "2023-11-06T21:51:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 11,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-06T21:58:17",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 12,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-06T21:59:01",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 13,
+    "fields": { "log": "{}", "time": "2023-11-07T17:14:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 14,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T17:14:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 15,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T17:14:38",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 16,
+    "fields": { "log": "{}", "time": "2023-11-07T17:14:42", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 17,
+    "fields": { "log": "{}", "time": "2023-11-07T17:14:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 18,
+    "fields": { "log": "{}", "time": "2023-11-07T17:14:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 19,
+    "fields": { "log": "{}", "time": "2023-11-07T17:18:36", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 20,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T17:45:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 21,
+    "fields": { "log": "{}", "time": "2023-11-07T17:45:24", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 22,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T17:45:35",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 23,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T17:45:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 24,
+    "fields": { "log": "{}", "time": "2023-11-07T18:18:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 25,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 26,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 27,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 28,
+    "fields": { "log": "{}", "time": "2023-11-07T18:18:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 29,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 30,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:32",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 31,
+    "fields": { "log": "{}", "time": "2023-11-07T18:18:52", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 32,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 33,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:18:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 34,
+    "fields": { "log": "{}", "time": "2023-11-07T18:19:02", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 35,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:19:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 36,
+    "fields": { "log": "{}", "time": "2023-11-07T18:19:31", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 37,
+    "fields": { "log": "{}", "time": "2023-11-07T18:19:35", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 38,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:27:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 39,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:27:11",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 40,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T18:28:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 41,
+    "fields": { "log": "{}", "time": "2023-11-07T19:05:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 42,
+    "fields": { "log": "{}", "time": "2023-11-07T19:05:49", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 43,
+    "fields": { "log": "{}", "time": "2023-11-07T19:15:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 44,
+    "fields": { "log": "{}", "time": "2023-11-07T19:21:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 45,
+    "fields": { "log": "{}", "time": "2023-11-07T19:21:47", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 46,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:21:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 47,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:21:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 48,
+    "fields": { "log": "{}", "time": "2023-11-07T19:21:56", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 49,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:22:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 50,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 51,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:06", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 52,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:09", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 53,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 54,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:15", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 55,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 56,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:21", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 57,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:24", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 58,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:22:27",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 59,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:22:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 60,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 61,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:36", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 62,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:22:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 63,
+    "fields": { "log": "{}", "time": "2023-11-07T19:22:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 64,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:23:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 65,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T19:23:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 66,
+    "fields": { "log": "{}", "time": "2023-11-07T19:23:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 67,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T19:23:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 68,
+    "fields": { "log": "{}", "time": "2023-11-07T19:23:57", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 69,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 70,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 71,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 72,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 73,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 74,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 75,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T19:24:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 76,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 77,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 78,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:29", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 79,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 80,
+    "fields": { "log": "{}", "time": "2023-11-07T19:24:36", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 81,
+    "fields": { "log": "{}", "time": "2023-11-07T19:35:04", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 82,
+    "fields": { "log": "{}", "time": "2023-11-07T19:35:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 83,
+    "fields": { "log": "{}", "time": "2023-11-07T19:35:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 84,
+    "fields": { "log": "{}", "time": "2023-11-07T20:16:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 85,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:16:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 86,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 87,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:21", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 88,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:24", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 89,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 90,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:31", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 91,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 92,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T20:17:37",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 93,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 94,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 95,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 96,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:17:49",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 97,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:52", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 98,
+    "fields": { "log": "{}", "time": "2023-11-07T20:17:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 99,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:20:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 100,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:20:22",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 101,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:20:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 102,
+    "fields": { "log": "{}", "time": "2023-11-07T20:20:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 103,
+    "fields": { "log": "{}", "time": "2023-11-07T20:20:31", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 104,
+    "fields": { "log": "{}", "time": "2023-11-07T20:39:02", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 105,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:39:05",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 106,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:39:08",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 107,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:39:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 108,
+    "fields": { "log": "{}", "time": "2023-11-07T20:39:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 109,
+    "fields": {
+      "log": "{\"severe\": 2}",
+      "time": "2023-11-07T20:39:19",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 110,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 1}",
+      "time": "2023-11-07T20:39:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 111,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:39:26",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 112,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 2}",
+      "time": "2023-11-07T20:39:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 113,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-07T20:43:18",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 114,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T20:43:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 115,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 1}",
+      "time": "2023-11-07T20:43:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 116,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:28", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 117,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:30", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 118,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 1}",
+      "time": "2023-11-07T20:43:33",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 119,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 1}",
+      "time": "2023-11-07T20:43:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 120,
+    "fields": {
+      "log": "{\"severe\": 1, \"moderate\": 1}",
+      "time": "2023-11-07T20:43:40",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 121,
+    "fields": {
+      "log": "{\"moderate\": 1, \"severe\": 1}",
+      "time": "2023-11-07T20:43:43",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 122,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 123,
+    "fields": { "log": "{}", "time": "2023-11-07T20:43:57", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 124,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T20:44:00",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 125,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 126,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:06", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 127,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-07T20:44:09",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 128,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 129,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 130,
+    "fields": { "log": "{}", "time": "2023-11-07T20:44:29", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 131,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:08", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 132,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 133,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 134,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:15", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 135,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:17", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 136,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:20", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 137,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 138,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 139,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 140,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 141,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 142,
+    "fields": { "log": "{}", "time": "2023-11-08T19:34:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 143,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:09", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 144,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 145,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 146,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:19", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 147,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 148,
+    "fields": { "log": "{}", "time": "2023-11-08T22:16:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 149,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 150,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-08T22:32:21",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 151,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:25", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 152,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-08T22:32:29",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 153,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 154,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 155,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:41", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 156,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 157,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 158,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-08T22:32:52",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 159,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:56", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 160,
+    "fields": { "log": "{}", "time": "2023-11-08T22:32:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 161,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-08T22:33:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 162,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 163,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 164,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-08T22:42:46",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 165,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 166,
+    "fields": { "log": "{}", "time": "2023-11-08T22:42:53", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 167,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-08T22:42:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 168,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:43:15",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 169,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 170,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 171,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:43:25",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 172,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:43:28",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 173,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 174,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:35", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 175,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:38", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 176,
+    "fields": {
+      "log": "{\"moderate\": 2}",
+      "time": "2023-11-16T19:43:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 177,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-16T19:43:45",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 178,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 179,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:52", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 180,
+    "fields": { "log": "{}", "time": "2023-11-16T19:43:55", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 181,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-16T19:43:58",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 182,
+    "fields": { "log": "{}", "time": "2023-11-16T19:44:01", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 183,
+    "fields": { "log": "{}", "time": "2023-11-16T19:44:04", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 184,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:44:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 185,
+    "fields": { "log": "{}", "time": "2023-11-16T19:44:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 186,
+    "fields": {
+      "log": "{\"severe\": 2}",
+      "time": "2023-11-16T19:44:13",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 187,
+    "fields": {
+      "log": "{\"severe\": 2}",
+      "time": "2023-11-16T19:44:16",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 188,
+    "fields": { "log": "{}", "time": "2023-11-16T19:44:19", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 189,
+    "fields": {
+      "log": "{\"severe\": 2}",
+      "time": "2023-11-16T19:44:23",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 190,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:46:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 191,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T19:46:12",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 192,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:19:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 193,
+    "fields": { "log": "{}", "time": "2023-11-16T20:19:56", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 194,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-16T20:19:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 195,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 196,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:06", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 197,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:09", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 198,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 199,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 200,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:19", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 201,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:23", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 202,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 203,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:30", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 204,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 205,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-16T20:20:36",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 206,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 207,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:42", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 208,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 209,
+    "fields": { "log": "{}", "time": "2023-11-16T20:20:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 210,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:20:51",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 211,
+    "fields": { "log": "{}", "time": "2023-11-16T20:22:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 212,
+    "fields": { "log": "{}", "time": "2023-11-16T20:22:53", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 213,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:22:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 214,
+    "fields": { "log": "{}", "time": "2023-11-16T20:22:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 215,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:32:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 216,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 217,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:36", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 218,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 219,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 220,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:47", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 221,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:32:51",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 222,
+    "fields": { "log": "{}", "time": "2023-11-16T20:32:54", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 223,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-16T20:32:57",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 224,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 225,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:03", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 226,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:05", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 227,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:08", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 228,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:11", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 229,
+    "fields": { "log": "{}", "time": "2023-11-16T20:33:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 230,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:10", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 231,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:12", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 232,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:14", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 233,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:17", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 234,
+    "fields": { "log": "{}", "time": "2023-11-16T20:40:20", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 235,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 236,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 237,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 238,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 239,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:42", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 240,
+    "fields": { "log": "{}", "time": "2023-11-16T20:45:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 241,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:11", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 242,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:14", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 243,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:16", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 244,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 245,
+    "fields": { "log": "{}", "time": "2023-11-16T21:07:21", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 246,
+    "fields": { "log": "{}", "time": "2023-11-16T21:08:41", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 247,
+    "fields": { "log": "{}", "time": "2023-11-19T21:21:31", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 248,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:27", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 249,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 250,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 251,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:47", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 252,
+    "fields": { "log": "{}", "time": "2023-11-20T15:09:54", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 253,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 254,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 255,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 256,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:35", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 257,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:38", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 258,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:41", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 259,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 260,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:49", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 261,
+    "fields": { "log": "{}", "time": "2023-11-20T15:10:52", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 262,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:10:56",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 263,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:10:59",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 264,
+    "fields": { "log": "{}", "time": "2023-11-20T15:11:02", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 265,
+    "fields": { "log": "{}", "time": "2023-11-20T15:11:05", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 266,
+    "fields": { "log": "{}", "time": "2023-11-20T15:11:44", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 267,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:20:30",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 268,
+    "fields": { "log": "{}", "time": "2023-11-20T15:20:33", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 269,
+    "fields": { "log": "{}", "time": "2023-11-20T15:20:36", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 270,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:20:39",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 271,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:20:42",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 272,
+    "fields": { "log": "{}", "time": "2023-11-20T15:20:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 273,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:20:48",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 274,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:20:50",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 275,
+    "fields": { "log": "{}", "time": "2023-11-20T15:20:53", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 276,
+    "fields": { "log": "{}", "time": "2023-11-20T15:20:56", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 277,
+    "fields": { "log": "{}", "time": "2023-11-20T15:21:34", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 278,
+    "fields": { "log": "{}", "time": "2023-11-20T15:21:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 279,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:07", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 280,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:15", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 281,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:22", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 282,
+    "fields": { "log": "{}", "time": "2023-11-20T15:22:29", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 283,
+    "fields": { "log": "{}", "time": "2023-11-20T15:30:18", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 284,
+    "fields": { "log": "{}", "time": "2023-11-20T15:30:23", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 285,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-20T15:30:27",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 286,
+    "fields": { "log": "{}", "time": "2023-11-20T15:35:50", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 287,
+    "fields": { "log": "{}", "time": "2023-11-20T15:35:54", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 288,
+    "fields": { "log": "{}", "time": "2023-11-20T15:35:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 289,
+    "fields": { "log": "{}", "time": "2023-11-20T15:36:04", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 290,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T15:36:10",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 291,
+    "fields": { "log": "{}", "time": "2023-11-20T17:30:45", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 292,
+    "fields": { "log": "{}", "time": "2023-11-20T17:30:48", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 293,
+    "fields": { "log": "{}", "time": "2023-11-20T17:30:51", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 294,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-20T17:45:34",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 295,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 296,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 297,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 298,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 299,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:49", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 300,
+    "fields": {
+      "log": "{\"severe\": 1}",
+      "time": "2023-11-20T17:45:53",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 301,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:56", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 302,
+    "fields": { "log": "{}", "time": "2023-11-20T17:45:59", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 303,
+    "fields": { "log": "{}", "time": "2023-11-20T17:46:04", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 304,
+    "fields": { "log": "{}", "time": "2023-11-20T17:46:39", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 305,
+    "fields": { "log": "{}", "time": "2023-11-20T17:46:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 306,
+    "fields": { "log": "{}", "time": "2023-11-20T17:46:53", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 307,
+    "fields": { "log": "{}", "time": "2023-11-20T17:47:00", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 308,
+    "fields": {
+      "log": "{\"moderate\": 1}",
+      "time": "2023-11-20T17:47:07",
+      "location": "서울"
+    }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 309,
+    "fields": { "log": "{}", "time": "2023-11-20T17:47:13", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 310,
+    "fields": { "log": "{}", "time": "2023-11-20T17:47:20", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 311,
+    "fields": { "log": "{}", "time": "2023-11-20T17:47:26", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 312,
+    "fields": { "log": "{}", "time": "2023-11-20T17:47:32", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 313,
+    "fields": { "log": "{}", "time": "2023-11-20T18:04:37", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 314,
+    "fields": { "log": "{}", "time": "2023-11-20T18:04:40", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 315,
+    "fields": { "log": "{}", "time": "2023-11-20T18:04:43", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 316,
+    "fields": { "log": "{}", "time": "2023-11-20T18:04:46", "location": "서울" }
+  },
+  {
+    "model": "cctv.accidentdetection",
+    "pk": 317,
+    "fields": { "log": "{}", "time": "2023-11-20T18:04:49", "location": "서울" }
+  }
+]

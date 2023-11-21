@@ -3,7 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 import { createTag } from "~/utils/django";
 ---
 
-<Layout title="Login">
+<Layout title="Login" isAdmin={false} loggedIn={false}>
   <div class="h-full bg-base-200">
     <main class="container mx-auto">
       <div class="flex justify-center">
