@@ -6,16 +6,9 @@ import RiLogoutBoxRFill from "~/components/icons/RiLogoutBoxRFill";
 interface Props {
   title: string;
   useTransition?: boolean;
-  loggedIn?: boolean;
-  isAdmin?: boolean;
 }
 
-const {
-  title,
-  useTransition = true,
-  loggedIn = true,
-  isAdmin = true,
-} = Astro.props;
+const { title, useTransition = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -60,24 +53,29 @@ const {
         <nav class="flex-none">
           <nav class="flex items-center justify-center gap-1">
             <slot name="header" />
-            {
-              isAdmin && (
-                <a href="/accounts/manage" class="btn btn-ghost text-lg">
-                  <span class="text-xl text-primary">
-                    <ClarityAdministratorSolid />
-                  </span>
-                </a>
-              )
-            }
-            {
-              loggedIn && (
-                <a href="/accounts/logout" class="btn btn-ghost text-lg">
-                  <span class="text-xl text-primary">
-                    <RiLogoutBoxRFill />
-                  </span>
-                </a>
-              )
-            }
+            <div class="dropdown">
+              <label tabindex="0" class="btn btn-ghost text-lg">
+                <span class="text-xl text-primary">
+                  <ClarityAdministratorSolid />
+                </span>
+              </label>
+              <ul
+                tabindex="0"
+                class="menu dropdown-content rounded-box z-[1] mt-1 bg-base-100 p-2 shadow"
+              >
+                <li>
+                  <a href="/accounts/manage">Manage</a>
+                </li>
+                <li>
+                  <a href="/admin">Admin</a>
+                </li>
+              </ul>
+            </div>
+            <button id="logout-button" class="btn btn-ghost text-lg">
+              <span class="text-xl text-primary">
+                <RiLogoutBoxRFill />
+              </span>
+            </button>
             <!-- <select name="theme" id="theme" class="select" transition:persist>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
@@ -90,4 +88,16 @@ const {
       </div>
     </div>
   </body>
+  <script>
+    document
+      .querySelector<HTMLButtonElement>("#logout-button")
+      ?.addEventListener("click", () => {
+        fetch("/accounts/logout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      });
+  </script>
 </html>

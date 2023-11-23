@@ -25,55 +25,79 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       </label>
     </div>
   </div>
-  <main class="h-full w-full px-6 pt-8 2xl:px-0 2xl:pt-8">
+  <main class="h-full w-full px-6 pt-2 2xl:px-0">
     <div class="drawer h-full 2xl:drawer-open">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content lg:px-8">
-        <div class="flex flex-col items-start gap-2">
-          <div class="grid w-full grid-cols-2 gap-4">
-            <div class="flex flex-col gap-4">
-              <div class="flex flex-col">
-                <h2 class="text-xl font-bold text-gray-800">Weekly Traffic</h2>
-                <span class="week-dates text-sm text-gray-500">Loading...</span>
-              </div>
-              <div>
-                <canvas id="weekly-traffic"></canvas>
-              </div>
+        <div class="flex flex-col items-start">
+          <div class="flex w-full flex-col gap-4">
+            <div class="flex w-full items-center gap-4">
+              <input type="week" id="week-input" class="input input-bordered" />
             </div>
-            <div class="flex flex-col">
-              <div class="flex flex-col">
-                <h2 class="text-xl font-bold text-gray-800">
-                  Weekly Accidents
-                </h2>
-                <span class="week-dates text-sm text-gray-500">Loading...</span>
+            <div class="grid w-full grid-cols-2 gap-4 rounded-lg border p-4">
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-col">
+                  <h2 class="text-xl font-bold text-gray-800">
+                    Weekly Traffic
+                  </h2>
+                  <span class="week-dates text-sm text-gray-500"
+                    >Loading...</span
+                  >
+                </div>
+                <div>
+                  <canvas id="weekly-traffic"></canvas>
+                </div>
               </div>
-              <div>
-                <canvas id="weekly-accidents"></canvas>
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-col">
+                  <h2 class="text-xl font-bold text-gray-800">
+                    Weekly Accidents
+                  </h2>
+                  <span class="week-dates text-sm text-gray-500"
+                    >Loading...</span
+                  >
+                </div>
+                <div>
+                  <canvas id="weekly-accidents"></canvas>
+                </div>
               </div>
             </div>
           </div>
           <div class="divider divider-vertical"></div>
-          <div class="grid w-full grid-cols-2 gap-4">
-            <div class="flex flex-col">
-              <div class="flex flex-col">
-                <h2 class="text-xl font-bold text-gray-800">Monthly Traffic</h2>
-                <span class="month-dates text-sm text-gray-500">Loading...</span
-                >
-              </div>
-              <div>
-                <canvas id="monthly-traffic"></canvas>
-              </div>
+          <div class="flex w-full flex-col gap-4">
+            <div class="flex w-full items-center gap-4">
+              <input
+                type="month"
+                id="month-input"
+                class="input input-bordered"
+              />
             </div>
-            <div class="flex flex-col">
-              <div class="flex flex-col">
-                <h2 class="text-xl font-bold text-gray-800">
-                  Monthly Accidents
-                </h2>
-                <span class="month-dates text-sm text-gray-500">Loading...</span
-                >
+            <div class="grid w-full grid-cols-2 gap-4 rounded-lg border p-4">
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-col">
+                  <h2 class="text-xl font-bold text-gray-800">
+                    Monthly Traffic
+                  </h2>
+                  <span class="month-dates text-sm text-gray-500"
+                    >Loading...</span
+                  >
+                </div>
+                <div>
+                  <canvas id="monthly-traffic"></canvas>
+                </div>
               </div>
-              <div>
-                <canvas id="monthly-accidents"></canvas>
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-col">
+                  <h2 class="text-xl font-bold text-gray-800">
+                    Monthly Accidents
+                  </h2>
+                  <span class="month-dates text-sm text-gray-500"
+                    >Loading...</span
+                  >
+                </div>
+                <div>
+                  <canvas id="monthly-accidents"></canvas>
+                </div>
               </div>
             </div>
           </div>
@@ -87,6 +111,7 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         >
         </label>
         <div class="h-full w-48 bg-base-200 py-2 2xl:rounded-tr-lg">
+          <h2 class="mt-2 text-center text-xl font-bold">CCTV</h2>
           <ul class="menu rounded-box gap-1">
             <li class="font-bold">
               <button id="cctv-1" class="cctv-button">CCTV 1</button>
@@ -107,6 +132,15 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
               <button id="cctv-6" class="cctv-button">CCTV 6</button>
             </li>
           </ul>
+          <h2 class="mt-8 text-center text-xl font-bold">Options</h2>
+          <ul class="rounded-box gap-1 px-2">
+            <li>
+              <select name="type" id="option">
+                <option value="traffic">Traffic</option>
+                <option value="accident">Accident</option>
+              </select>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -117,12 +151,26 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     import * as DateUtils from "~/utils/date";
     import { fetchWithRange } from "~/data/statistics";
 
-    console.log(DateUtils.getWeekStart());
-
     let cctvId = new URLSearchParams(window.location.search).get("cctv");
     let dateFrom: Date;
     let dateTo: Date;
     let month: number;
+
+    document.querySelector<HTMLInputElement>("#month-input")!.value = `${
+      DateUtils.getMonthStart().getFullYear() +
+      "-" +
+      (DateUtils.getMonthStart().getMonth() + 1).toString().padStart(2, "0")
+    }`;
+
+    document.querySelector<HTMLInputElement>(
+      "#week-input",
+    )!.value = `${DateUtils.getWeekStart().getFullYear()}-W${DateUtils.getWeek(
+      new Date(),
+    )
+      .toString()
+      .padStart(2, "0")}`;
+
+    console.log(document.querySelector<HTMLInputElement>("#week-input")!.value);
 
     document.querySelectorAll(".week-dates").forEach((element) => {
       element.textContent = `${DateUtils.getWeekStart().toLocaleDateString()} - ${DateUtils.getWeekEnd().toLocaleDateString()}`;
@@ -167,7 +215,7 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       }),
     );
 
-    setWeeklyChart().catch((error) => {
+    setWeeklyChart(2023, 47).catch((error) => {
       console.error(error);
     });
 
@@ -178,9 +226,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       console.error(error);
     });
 
-    async function setWeeklyChart() {
-      const weekStart = DateUtils.getWeekStart();
-      const weekEnd = DateUtils.getWeekEnd();
+    async function setWeeklyChart(year: number, week: number) {
+      // const weekStart = DateUtils.getWeekStart();
+      // const weekEnd = DateUtils.getWeekEnd();
+      const weekStart = DateUtils.getDateOfWeek(year, week)
+      const weekEnd =  new Date(weekStart.getTime() + 6 * 24 * 60 * 60 * 1000);
 
       // fetch data from database
       const weeklyData = await fetchWithRange(
@@ -202,8 +252,6 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         };
       });
 
-      console.log(processedWeeklyData);
-
       weeklyData.forEach((data) => {
         const day = data.time.getDay();
 
@@ -214,14 +262,12 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         processedWeeklyData[day].bike += data.log.bike ?? 0;
       });
 
-      console.log(processedWeeklyData);
-
       const weeklyTrafficChart = new Chart(
         document.querySelector("#weekly-traffic") as ChartItem,
         {
           type: "line",
           data: {
-            labels: processedWeeklyData.map((_, index) => index + 1),
+            labels: processedWeeklyData.map((_, index) => index + weekStart.getDate()),
             datasets: [
               {
                 label: "Car Count",
@@ -286,9 +332,9 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       });
 
       weeklyAccidents.forEach((data) => {
-        const date = data.time.getDate();
-        processedWeeklyAccidents[date - 1].moderate += data.log.moderate ?? 0;
-        processedWeeklyAccidents[date - 1].accidents += data.log.severe ?? 0;
+        const day = data.time.getDay();
+        processedWeeklyAccidents[day].moderate += data.log.moderate ?? 0;
+        processedWeeklyAccidents[day].accidents += data.log.severe ?? 0;
       });
 
       const weeklyAccidentsChart = new Chart(
@@ -296,7 +342,7 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         {
           type: "line",
           data: {
-            labels: processedWeeklyAccidents.map((_, index) => index + 1),
+            labels: processedWeeklyAccidents.map((_, index) => index + weekStart.getDate()``),
             datasets: [
               {
                 label: "Moderate Accidents",

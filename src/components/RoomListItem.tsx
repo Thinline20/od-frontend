@@ -1,11 +1,9 @@
 // ---
 // import { Image } from "astro:assets";
 // import TempCCTVImage from "~/assets/temp-cctv.jpg";
-
 // type Props = {
 //   room: string;
 // };
-
 // const { room } = Astro.props;
 // ---
 import TempCCTVImage from "~/assets/temp-cctv.jpg";
@@ -31,9 +29,8 @@ export default (props: RoomListItemProps) => {
           </figure>
           <div class="p-6 md:p-8">
             <h3 class="text-xl font-bold uppercase md:text-3xl">
-              {props.room}
+              CCTV-{props.room}
             </h3>
-            <p></p>
           </div>
         </button>
         <input type="text" value={props.room} name="name" class="sr-only" />

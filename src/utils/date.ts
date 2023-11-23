@@ -20,3 +20,17 @@ export const getMonthStart = () => {
 export const getMonthEnd = () => {
   return new Date(NOW.getFullYear(), getMonth(), 0);
 };
+
+export const getWeek = (date: Date) => {
+  const oneJan = new Date(date.getFullYear(), 0, 1);
+  const numberOfDays = Math.floor(
+    (date.getTime() - oneJan.getTime()) / (24 * 60 * 60 * 1000),
+  );
+  return Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
+};
+
+export const getDateOfWeek = (y: number, w: number) => {
+  const d = 1 + (w - 1) * 7; // 1st of January + 7 days for each week
+
+  return new Date(y, 0, d + 1);
+};

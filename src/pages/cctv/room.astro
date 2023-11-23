@@ -21,7 +21,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       </span>
     </a>
   </div>
-  <main class="container mx-auto flex h-full justify-center p-8">
+  <main class="container mx-auto flex h-full justify-center px-8 py-4">
     <div class="flex h-full flex-col gap-4 lg:gap-8">
       <div class="flex flex-col gap-4 lg:grid lg:grid-cols-5">
         <div
@@ -227,7 +227,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
     document.querySelector<HTMLAnchorElement>("#statistics-link")!.href =
       "/statistics?cctv=" + cctvId;
 
-    waitForCCTVSocket(cctvSocket);
+    //waitForCCTVSocket(cctvSocket);
 
     // Set the log data to the textarea and set the video frames to the cctv-image
     cctvSocket.onmessage = function (e) {
@@ -283,11 +283,13 @@ import placeholderImage from "~/assets/placeholder.jpg";
         previousHour = date.getHours();
         dailyStat.forEach((value, index) => {
           value.shift();
-          value.push(hourlyStat[index]);
+          value.push(0);
           updateChart(dailyChart, value, false, index);
         });
         dailyChart.data.labels?.shift();
-        dailyChart.data.labels?.push(previousHour.toString().padStart(2, "0"));
+        dailyChart.data.labels?.push(
+          ((previousHour + 1) % 24).toString().padStart(2, "0"),
+        );
         hourlyStat = [0, 0, 0, 0, 0];
       }
 
@@ -296,6 +298,12 @@ import placeholderImage from "~/assets/placeholder.jpg";
       hourlyStat[2] += bus;
       hourlyStat[3] += bike;
       hourlyStat[4] += person;
+
+      dailyStat[0][dailyStat[0].length - 1] += car;
+      dailyStat[1][dailyStat[1].length - 1] += truck;
+      dailyStat[2][dailyStat[2].length - 1] += bus;
+      dailyStat[3][dailyStat[3].length - 1] += bike;
+      dailyStat[4][dailyStat[4].length - 1] += person;
 
       updateChart(hourlyChart, hourlyStat, false);
 
@@ -367,7 +375,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     }
 
-    // test()
+    test();
 
     function test() {
       setTimeout(() => {
@@ -439,4 +447,3 @@ import placeholderImage from "~/assets/placeholder.jpg";
     }
   </script>
 </Layout>
- ~/utils/django
