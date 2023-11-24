@@ -1,13 +1,10 @@
-import a from "./accidents.json";
-import d from "./data.json";
-import type { LogType, AccidentType } from "./log";
+import type { LogType } from "./log";
 
 type LogData = {
   fields: RawFields;
   model: string;
   pk: number;
 };
-
 
 type RawFields = {
   log: string;
@@ -36,16 +33,26 @@ export async function fetchWithRange(
   to: Date,
   type: "log" | "accident",
 ) {
+  console.log(from);
+  console.log(to);
+
+  const urlBase = `${location.protocol}//${location.hostname}:8000/statistics`;
+  const dateQuery = `dateFrom=${from.toISOString().slice(0, 10)}&dateTo=${to
+    .toISOString()
+    .slice(0, 10)}`;
   const url =
     type === "log"
-      ? `http://127.0.0.1:8000/statistics/dateDetail?dateFrom=${from
-          .toISOString()
-          .slice(0, 10)}&dateTo=${to.toISOString().slice(0, 10)}`
-      : `http://127.0.0.1:8000/statistics/accedentFindAll?dateFrom=${from
-          .toISOString()
-          .slice(0, 10)}&dateTo=${to.toISOString().slice(0, 10)}`;
+      ? `${urlBase}/dateDetail?${dateQuery}`
+      : `${urlBase}/accedentFindAll?${dateQuery}`;
 
-  const response = await fetch(url);
+  // cors
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
 
   const data: LogData[] = JSON.parse(await response.json());
 
@@ -61,28 +68,6 @@ export async function fetchWithRange(
       location: rawFields.location,
     } satisfies Fields;
   });
-
-  // if (type === "log") {
-  //   const data = d;
-  //   return data.map((item) => {
-  //     const rawFields = item.fields;
-  //     return {
-  //       log: JSON.parse(rawFields.log),
-  //       time: new Date(rawFields.time),
-  //       location: rawFields.location,
-  //     } satisfies Fields;
-  //   });
-  // } else {
-  //   const data = a;
-  //   return data.map((item) => {
-  //     const rawFields = item.fields;
-  //     return {
-  //       log: JSON.parse(rawFields.log),
-  //       time: new Date(rawFields.time),
-  //       location: rawFields.location,
-  //     } satisfies Fields;
-  //   });
-  // }
 }
 
 export function processData(data: Fields[], dataFor: "hour" | "day" | "month") {

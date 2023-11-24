@@ -4,6 +4,7 @@ export const getHour = () => NOW.getHours();
 export const getDate = () => NOW.getDate();
 export const getDay = () => NOW.getDay();
 export const getMonth = () => NOW.getMonth() + 1;
+export const getYear = () => NOW.getFullYear();
 export const getWeekStart = () => {
   const date = getDate();
   const day = getDay();
@@ -32,5 +33,5 @@ export const getWeek = (date: Date) => {
 export const getDateOfWeek = (y: number, w: number) => {
   const d = 1 + (w - 1) * 7; // 1st of January + 7 days for each week
 
-  return new Date(y, 0, d + 1);
+  return new Date(y, 0, d);
 };

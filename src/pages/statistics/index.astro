@@ -134,12 +134,12 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
           </ul>
           <h2 class="mt-8 text-center text-xl font-bold">Options</h2>
           <ul class="rounded-box gap-1 px-2">
-            <li>
+            <!-- <li>
               <select name="type" id="option">
                 <option value="traffic">Traffic</option>
                 <option value="accident">Accident</option>
               </select>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -152,9 +152,22 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     import { fetchWithRange } from "~/data/statistics";
 
     let cctvId = new URLSearchParams(window.location.search).get("cctv");
-    let dateFrom: Date;
-    let dateTo: Date;
-    let month: number;
+
+    let weeklyTrafficChart: Chart;
+    let weeklyAccidentsChart: Chart;
+    let monthlyTrafficChart: Chart;
+    let monthlyAccidentsChart: Chart;
+
+    const initialWeek = DateUtils.getWeek(new Date());
+
+    let weekStart = DateUtils.getWeekStart().toLocaleDateString();
+    let weekEnd = DateUtils.getWeekEnd().toLocaleDateString();
+    let monthStart = DateUtils.getMonthStart().toLocaleDateString();
+    let monthEnd = DateUtils.getMonthEnd().toLocaleDateString();
+
+    const weekInput = document.querySelector<HTMLInputElement>("#week-input")!;
+    const monthInput =
+      document.querySelector<HTMLInputElement>("#month-input")!;
 
     document.querySelector<HTMLInputElement>("#month-input")!.value = `${
       DateUtils.getMonthStart().getFullYear() +
@@ -173,12 +186,56 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     console.log(document.querySelector<HTMLInputElement>("#week-input")!.value);
 
     document.querySelectorAll(".week-dates").forEach((element) => {
-      element.textContent = `${DateUtils.getWeekStart().toLocaleDateString()} - ${DateUtils.getWeekEnd().toLocaleDateString()}`;
+      element.textContent = `${weekStart} - ${weekEnd}`;
     });
 
     document.querySelectorAll(".month-dates").forEach((element) => {
-      element.textContent = `${DateUtils.getMonthStart().toLocaleDateString()} - ${DateUtils.getMonthEnd().toLocaleDateString()}`;
+      element.textContent = `${monthStart} - ${monthEnd}`;
     });
+
+    monthInput.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      const [year, month] = target.value.split("-").map((e) => parseInt(e));
+
+      monthStart = new Date(year, month - 1, 1).toLocaleDateString();
+      monthEnd = new Date(year, month, 0).toLocaleDateString();
+
+      document.querySelectorAll(".month-dates").forEach((element) => {
+        element.textContent = `${monthStart} - ${monthEnd}`;
+      });
+
+      setMonthlyChart(year, month - 1).catch((error) => {
+        console.error(error);
+      });
+    });
+
+    weekInput.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      const [year, week] = target.value.split("-W").map((e) => parseInt(e));
+
+      weekStart = DateUtils.getDateOfWeek(year, week).toLocaleDateString();
+      weekEnd = new Date(
+        DateUtils.getDateOfWeek(year, week).getTime() + 6 * 24 * 60 * 60 * 1000,
+      ).toLocaleDateString();
+
+      document.querySelectorAll(".week-dates").forEach((element) => {
+        element.textContent = `${weekStart} - ${weekEnd}`;
+      });
+
+      setWeeklyChart(year, week).catch((error) => {
+        console.error(error);
+      });
+    });
+
+    monthInput!.value = `${
+      DateUtils.getMonthStart().getFullYear() +
+      "-" +
+      (DateUtils.getMonthStart().getMonth() + 1).toString().padStart(2, "0")
+    }`;
+
+    weekInput!.value = `${DateUtils.getWeekStart().getFullYear()}-W${initialWeek
+      .toString()
+      .padStart(2, "0")}`;
 
     if (cctvId === null) {
       cctvId = "1";
@@ -215,13 +272,16 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
       }),
     );
 
-    setWeeklyChart(2023, 47).catch((error) => {
+    setWeeklyChart(
+      DateUtils.getWeekStart().getFullYear(),
+      DateUtils.getWeek(new Date()),
+    ).catch((error) => {
       console.error(error);
     });
 
     setMonthlyChart(
-      DateUtils.getMonthStart().getFullYear(),
-      DateUtils.getMonthStart().getMonth(),
+      parseInt(monthInput!.value.split("-")[0], 10),
+      parseInt(monthInput!.value.split("-")[1], 10),
     ).catch((error) => {
       console.error(error);
     });
@@ -229,8 +289,8 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
     async function setWeeklyChart(year: number, week: number) {
       // const weekStart = DateUtils.getWeekStart();
       // const weekEnd = DateUtils.getWeekEnd();
-      const weekStart = DateUtils.getDateOfWeek(year, week)
-      const weekEnd =  new Date(weekStart.getTime() + 6 * 24 * 60 * 60 * 1000);
+      const weekStart = DateUtils.getDateOfWeek(year, week);
+      const weekEnd = new Date(weekStart.getTime() + 6 * 24 * 60 * 60 * 1000);
 
       // fetch data from database
       const weeklyData = await fetchWithRange(
@@ -239,8 +299,6 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         weekEnd,
         "log",
       );
-
-      console.log(weeklyData);
 
       const processedWeeklyData = Array.from({ length: 7 }, (_, i) => {
         return {
@@ -262,12 +320,18 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         processedWeeklyData[day].bike += data.log.bike ?? 0;
       });
 
-      const weeklyTrafficChart = new Chart(
+      if (weeklyTrafficChart) {
+        weeklyTrafficChart.destroy();
+      }
+
+      weeklyTrafficChart = new Chart(
         document.querySelector("#weekly-traffic") as ChartItem,
         {
           type: "line",
           data: {
-            labels: processedWeeklyData.map((_, index) => index + weekStart.getDate()),
+            labels: processedWeeklyData.map(
+              (_, index) => index + weekStart.getDate(),
+            ),
             datasets: [
               {
                 label: "Car Count",
@@ -337,12 +401,18 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         processedWeeklyAccidents[day].accidents += data.log.severe ?? 0;
       });
 
-      const weeklyAccidentsChart = new Chart(
+      if (weeklyAccidentsChart) {
+        weeklyAccidentsChart.destroy();
+      }
+
+      weeklyAccidentsChart = new Chart(
         document.querySelector("#weekly-accidents") as ChartItem,
         {
           type: "line",
           data: {
-            labels: processedWeeklyAccidents.map((_, index) => index + weekStart.getDate()``),
+            labels: processedWeeklyAccidents.map(
+              (_, index) => index + weekStart.getDate(),
+            ),
             datasets: [
               {
                 label: "Moderate Accidents",
@@ -374,8 +444,8 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
 
     // This function sets graphs
     async function setMonthlyChart(year: number, month: number) {
-      const monthStart = new Date(year, month, 1);
-      const monthEnd = new Date(year, month + 1, 0);
+      const monthStart = new Date(year, month - 1, 1);
+      const monthEnd = new Date(year, month, 0);
 
       // fetch data from database
       const monthlyData = await fetchWithRange(
@@ -407,7 +477,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         processedMonthlyData[date - 1].bike += data.log.bike ?? 0;
       });
 
-      const monthlyTraffic = new Chart(
+      if (monthlyTrafficChart) {
+        monthlyTrafficChart.destroy();
+      }
+
+      monthlyTrafficChart = new Chart(
         document.querySelector("#monthly-traffic") as ChartItem,
         {
           type: "line",
@@ -485,7 +559,11 @@ import BsLayoutTextSidebar from "~/components/icons/BsLayoutTextSidebar";
         processedMonthlyAccidents[date - 1].accidents += data.log.severe ?? 0;
       });
 
-      const monthlyAccidentsChart = new Chart(
+      if (monthlyAccidentsChart) {
+        monthlyAccidentsChart.destroy();
+      }
+
+      monthlyAccidentsChart = new Chart(
         document.querySelector("#monthly-accidents") as ChartItem,
         {
           type: "line",

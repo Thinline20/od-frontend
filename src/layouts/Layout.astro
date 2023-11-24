@@ -3,6 +3,9 @@ import { ViewTransitions } from "astro:transitions";
 import { Icon } from "astro-icon";
 import ClarityAdministratorSolid from "~/components/icons/ClarityAdministratorSolid";
 import RiLogoutBoxRFill from "~/components/icons/RiLogoutBoxRFill";
+import MaterialSymbolsPersonCheckRounded from "~/components/icons/MaterialSymbolsPersonCheckRounded";
+import { createTag } from "~/utils/django";
+
 interface Props {
   title: string;
   useTransition?: boolean;
@@ -61,7 +64,7 @@ const { title, useTransition = true } = Astro.props;
               </label>
               <ul
                 tabindex="0"
-                class="menu dropdown-content rounded-box z-[1] mt-1 bg-base-100 p-2 shadow"
+                class="menu dropdown-content rounded-box z-[1] mt-1 w-max bg-base-100 p-2 shadow"
               >
                 <li>
                   <a href="/accounts/manage">Manage</a>
@@ -69,13 +72,24 @@ const { title, useTransition = true } = Astro.props;
                 <li>
                   <a href="/admin">Admin</a>
                 </li>
+                <li>
+                  <a href="/accounts/signup">Create user</a>
+                </li>
               </ul>
             </div>
+            {createTag("endif")}
             <button id="logout-button" class="btn btn-ghost text-lg">
               <span class="text-xl text-primary">
                 <RiLogoutBoxRFill />
               </span>
             </button>
+            {createTag("else")}
+            <a href="/accounts/login" class="btn btn-ghost text-lg">
+              <span class="text-xl text-primary">
+                <MaterialSymbolsPersonCheckRounded />
+              </span>
+            </a>
+            {createTag("endif")}
             <!-- <select name="theme" id="theme" class="select" transition:persist>
             <option value="light">Light</option>
             <option value="dark">Dark</option>

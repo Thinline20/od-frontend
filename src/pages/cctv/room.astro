@@ -270,7 +270,12 @@ import placeholderImage from "~/assets/placeholder.jpg";
           time: data.detect_time,
         } satisfies AccidentType;
 
-        addAccident(tempAccident);
+        if (
+          tempAccident.log.severe !== undefined ||
+          tempAccident.log.moderate !== undefined
+        ) {
+          addAccident(tempAccident);
+        }
       }
 
       if (data.ok === null) {
@@ -299,13 +304,19 @@ import placeholderImage from "~/assets/placeholder.jpg";
       hourlyStat[3] += bike;
       hourlyStat[4] += person;
 
-      dailyStat[0][dailyStat[0].length - 1] += car;
-      dailyStat[1][dailyStat[1].length - 1] += truck;
-      dailyStat[2][dailyStat[2].length - 1] += bus;
-      dailyStat[3][dailyStat[3].length - 1] += bike;
-      dailyStat[4][dailyStat[4].length - 1] += person;
+      dailyStat[0][23] += car;
+      dailyStat[1][23] += truck;
+      dailyStat[2][23] += bus;
+      dailyStat[3][23] += bike;
+      dailyStat[4][23] += person;
 
       updateChart(hourlyChart, hourlyStat, false);
+
+      updateChart(dailyChart, dailyStat[0], false, 0);
+      updateChart(dailyChart, dailyStat[1], false, 1);
+      updateChart(dailyChart, dailyStat[2], false, 2);
+      updateChart(dailyChart, dailyStat[3], false, 3);
+      updateChart(dailyChart, dailyStat[4], false, 4);
 
       sendMessage(cctvSocket, ACTIVE_MESSAGE);
     };
@@ -375,75 +386,75 @@ import placeholderImage from "~/assets/placeholder.jpg";
       }
     }
 
-    test();
+    // test();
 
-    function test() {
-      setTimeout(() => {
-        mainImage?.classList.remove("sr-only");
-        imageLoading?.remove();
-        inner();
-      }, 1000);
+    // function test() {
+    //   setTimeout(() => {
+    //     mainImage?.classList.remove("sr-only");
+    //     imageLoading?.remove();
+    //     inner();
+    //   }, 1000);
 
-      function inner() {
-        setInterval(() => {
-          const tempLog = {
-            log: {
-              person: 1,
-              car: 2,
-            },
-            location: location,
-            time: "2023-10-28 22:25:17",
-          } satisfies LogType;
+    //   function inner() {
+    //     setInterval(() => {
+    //       const tempLog = {
+    //         log: {
+    //           person: 1,
+    //           car: 2,
+    //         },
+    //         location: location,
+    //         time: "2023-10-28 22:25:17",
+    //       } satisfies LogType;
 
-          const tempAccident = {
-            log: {
-              severe: 2,
-              moderate: 1,
-            },
-            location: location,
-            time: "2023-10-28 22:25:17",
-          } satisfies AccidentType;
+    //       const tempAccident = {
+    //         log: {
+    //           severe: 2,
+    //           moderate: 1,
+    //         },
+    //         location: location,
+    //         time: "2023-10-28 22:25:17",
+    //       } satisfies AccidentType;
 
-          addLog(tempLog);
-          addAccident(tempAccident);
+    //       addLog(tempLog);
+    //       addAccident(tempAccident);
 
-          updateChart(
-            objectCountChart,
-            [
-              tempLog.log.car ?? 0,
-              tempLog.log.truck ?? 0,
-              tempLog.log.bus ?? 0,
-              tempLog.log.bike ?? 0,
-              tempLog.log.person ?? 0,
-            ],
-            true,
-          );
+    //       updateChart(
+    //         objectCountChart,
+    //         [
+    //           tempLog.log.car ?? 0,
+    //           tempLog.log.truck ?? 0,
+    //           tempLog.log.bus ?? 0,
+    //           tempLog.log.bike ?? 0,
+    //           tempLog.log.person ?? 0,
+    //         ],
+    //         true,
+    //       );
 
-          hourlyStat[0] += tempLog.log.car ?? 0;
-          hourlyStat[1] += tempLog.log.truck ?? 0;
-          hourlyStat[2] += tempLog.log.bus ?? 0;
-          hourlyStat[3] += tempLog.log.bike ?? 0;
-          hourlyStat[4] += tempLog.log.person ?? 0;
+    //       hourlyStat[0] += tempLog.log.car ?? 0;
+    //       hourlyStat[1] += tempLog.log.truck ?? 0;
+    //       hourlyStat[2] += tempLog.log.bus ?? 0;
+    //       hourlyStat[3] += tempLog.log.bike ?? 0;
+    //       hourlyStat[4] += tempLog.log.person ?? 0;
 
-          const date = new Date();
+    //       const date = new Date();
 
-          if (true) {
-            previousHour = date.getHours();
-            dailyStat.forEach((value, index) => {
-              value.shift();
-              value.push(hourlyStat[index]);
-              updateChart(dailyChart, value, false, index);
-            });
-            dailyChart.data.labels?.shift();
-            dailyChart.data.labels?.push(
-              previousHour.toString().padStart(2, "0"),
-            );
-            hourlyStat = [0, 0, 0, 0, 0];
-          }
+    //       if (true) {
+    //         previousHour = date.getHours();
+    //         dailyStat.forEach((value, index) => {
+    //           value.shift();
+    //           value.push(hourlyStat[index]);
+    //           updateChart(dailyChart, value, false, index);
+    //         });
+    //         dailyChart.data.labels?.shift();
+    //         dailyChart.data.labels?.push(
+    //           previousHour.toString().padStart(2, "0"),
+    //         );
+    //         hourlyStat = [0, 0, 0, 0, 0];
+    //       }
 
-          updateChart(hourlyChart, hourlyStat, true);
-        }, 1000);
-      }
-    }
+    //       updateChart(hourlyChart, hourlyStat, true);
+    //     }, 1000);
+    //   }
+    // }
   </script>
 </Layout>
