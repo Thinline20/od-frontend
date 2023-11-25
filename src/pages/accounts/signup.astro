@@ -23,7 +23,7 @@ import { createTag } from "~/utils/django";
                   <label for="name" class="label">
                     <span class="label-text">Name</span>
                   </label>
-                  <input type="text" id="name" class="input input-bordered" />
+                  <input type="text" id="name" name="username" class="input input-bordered" />
                 </div>
                 <div class="form-control">
                   <label for="password" class="label">
@@ -32,6 +32,7 @@ import { createTag } from "~/utils/django";
                   <input
                     type="password"
                     id="password"
+                    name="password1"
                     class="input input-bordered"
                   />
                 </div>
@@ -42,6 +43,7 @@ import { createTag } from "~/utils/django";
                   <input
                     type="password"
                     id="password-check"
+                    name="password2"
                     class="input input-bordered"
                   />
                 </div>
@@ -49,7 +51,7 @@ import { createTag } from "~/utils/django";
                   <label for="email" class="label">
                     <span class="label-text">E-Mail</span>
                   </label>
-                  <input type="email" id="email" class="input input-bordered" />
+                  <input type="email" id="email" name="email" class="input input-bordered" />
                 </div>
               </div>
               <div class="form-control mt-7">
