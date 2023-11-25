@@ -109,7 +109,7 @@ const { title, useTransition = true } = Astro.props;
       .querySelector<HTMLButtonElement>("#logout-button")
       ?.addEventListener("click", async () => {
         const res = await fetch("/accounts/logout/", {
-          method: "post",
+          method: "get",
           headers: {
             "Content-Type": "application/json",
           },
