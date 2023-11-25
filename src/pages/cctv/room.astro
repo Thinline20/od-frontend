@@ -227,7 +227,7 @@ import placeholderImage from "~/assets/placeholder.jpg";
     document.querySelector<HTMLAnchorElement>("#statistics-link")!.href =
       "/statistics?cctv=" + cctvId;
 
-    //waitForCCTVSocket(cctvSocket);
+    waitForCCTVSocket(cctvSocket);
 
     // Set the log data to the textarea and set the video frames to the cctv-image
     cctvSocket.onmessage = function (e) {
