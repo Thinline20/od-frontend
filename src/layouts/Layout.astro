@@ -56,6 +56,8 @@ const { title, useTransition = true } = Astro.props;
         <nav class="flex-none">
           <nav class="flex items-center justify-center gap-1">
             <slot name="header" />
+            {createTag("if", "user.is_authenticated")}
+            {createTag("if", "user.is_superuser")}
             <div class="dropdown">
               <label tabindex="0" class="btn btn-ghost text-lg">
                 <span class="text-xl text-primary">
@@ -105,13 +107,15 @@ const { title, useTransition = true } = Astro.props;
   <script>
     document
       .querySelector<HTMLButtonElement>("#logout-button")
-      ?.addEventListener("click", () => {
-        fetch("/accounts/logout", {
-          method: "POST",
+      ?.addEventListener("click", async () => {
+        const res = await fetch("/accounts/logout/", {
+          method: "post",
           headers: {
             "Content-Type": "application/json",
           },
         });
+
+        window.location.href = "/";
       });
   </script>
 </html>
